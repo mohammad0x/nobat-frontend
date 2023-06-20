@@ -6,3 +6,28 @@ body {
   background: white;
   height: 100vh;
 }
+
+.bg-transparent-gray {
+  background: rgba(75, 75, 75, 0.7);
+}
+
+.fontw {
+  font-weight: 600;
+}
+
+.position {
+  top: -20px;
+  left: -25px;
+}
+
+.box-shadow {
+  box-shadow: 0 2px 3px 2px rgba(1, 1, 1, 0.16);
+}
+
+.search-border {
+  border: 1px solid #4b4b4b;
+}
+
+.font-size {
+  font-size: .8rem;
+}
