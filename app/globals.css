@@ -4,7 +4,10 @@
 
 body {
   background: white;
-  height: 100vh;
+}
+
+.body {
+  margin-bottom: 7rem;
 }
 
 .bg-transparent-gray {
