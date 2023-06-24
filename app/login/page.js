@@ -17,8 +17,10 @@ export default function Login() {
                             <form action="" className='flex flex-col mt-5 items-center'>
                                 <input type="text" name="username" id="username" className='w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 ' placeholder='نام کابری'/>
                                 <input type="email" name="email" id="email" className='w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 ' placeholder='ایمیل'/>
-                                <input type="password" name='password' className='w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 ' placeholder='رمزعبور'/>
+                                <input type="password" name='password' className='w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded' placeholder='رمزعبور'/>
                                 <input type="submit" value="ورود" className='w-44 md:w-48 lg:w-52 h-12 lg:h-14 mt-1 border border-gray-500 rounded shadow hover:shadow-lg duration-500'/>
+                                <span></span>
+                                <p className='text-sm mt-3'>اکانت ندارید؟ <a className='text-blue-500 hover:text-blue-800 duration-200' href="../login">ثبت نام</a> کنید</p>
                             </form>
                         </div>
                     </div>

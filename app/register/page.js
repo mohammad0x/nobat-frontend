@@ -21,6 +21,7 @@ export default function Register() {
                                 <input type="password" name='password' className='w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 ' placeholder='تکرار رمزعبور'/>
                                 <input type="submit" value="ورود" className='w-44 md:w-48 lg:w-52 h-12 lg:h-14 mt-1 border border-gray-500 rounded shadow hover:shadow-lg duration-500'/>
                             </form>
+                            <p className='text-sm mt-3'>اکانت دارید؟ <a className='text-blue-500 hover:text-blue-800 duration-200' href="../login">وارد</a> شوید</p>
                         </div>
                     </div>
                 </section>
