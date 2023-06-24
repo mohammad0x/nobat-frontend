@@ -12,7 +12,7 @@ export default function Profile() {
                 <meta content="ie=edge"/>
                 <title> Document < /title>
             </head>
-            <body dir='rtl' className='body'>
+            <body dir='rtl' className='footerBody'>
                 <ProfileView />
                 <Footer />
             </body>

@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.footerBody {
   background: white;
-}
-
-.body {
   margin-bottom: 7rem;
 }
 

@@ -16,7 +16,7 @@ export default async function Home(){
               <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
               <title>نوبت</title>
           </head>
-          <body dir='rtl' className='body'>
+          <body dir='rtl' className='footerBody'>
               <Header />
               <section className='py-6 px-3 sm:px-8'>
                   <div className='relative'>

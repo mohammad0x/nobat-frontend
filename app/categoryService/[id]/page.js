@@ -11,7 +11,7 @@ export default function CategoryService({ params }) {
                 <meta content="ie=edge"/>
                 <title> Document < /title>
             </head>
-            <body dir='rtl' className='body'>
+            <body dir='rtl' className=''>
             <Back />
                 <header className='h-40 bg-gray-950 text-center flex justify-center items-center'>
                     <h1 className='text-white text-2xl'>CategoryService</h1>
