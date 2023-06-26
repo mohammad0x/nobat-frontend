@@ -17,7 +17,8 @@ export default function myService() {
                 <header className='h-40 bg-gray-950 text-center flex justify-center items-center'>
                     <h1 className='text-white text-2xl'>سرویس ها</h1>
                 </header>
-                <section className='h-screen w-screen flex flex-col items-center py-4'>
+                <section className='flex flex-col items-center py-4'>
+                    <AddBtn />
                     <Services />
                 </section>
             </body>
@@ -27,7 +28,7 @@ export default function myService() {
 
 function Services() {
     return (
-        <div className='w-72 md:w-96 h-28 md:h-32 rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3'>
+        <div className='w-72 md:w-96 h-28 md:h-32 shadow rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3'>
             <div className='flex justify-between mb-3 items-center'>
                 <h1 className='text-2xl'>مدل المانی</h1>
                 <h2 className='text-lg'>220000 تومان</h2>
@@ -40,5 +41,11 @@ function Services() {
                 </div>
             </div>
         </div>
+    )
+}
+
+function AddBtn() {
+    return (
+        <a href='#' className='w-20 h-20 absolute bottom-2 right-7 bg-green-800 rounded-full'></a>
     )
 }
