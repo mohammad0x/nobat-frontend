@@ -30,7 +30,7 @@ function ProfileView() {
             <h1 className='mt-5 text-2xl'>عرفان کاهانی</h1>
             <div className='mt-6 flex flex-col items-center'>
                 <Service />
-                <a href="#">
+                <a href="../history">
                     <div className='md:w-96 w-64 mx-2 my-2 h-11 rounded-xl flex items-center shadow justify-center border border-gray-400 hover:shadow-lg duration-500'>
                         تاریخچه
                     </div>
@@ -54,7 +54,7 @@ function ProfileView() {
 
 function Service() {
     return (
-        <a href="#">
+        <a href="../myService">
             <div className='md:w-96 w-64 mx-2 my-2 h-11 rounded-xl flex items-center shadow justify-center border border-gray-400 hover:shadow-lg duration-500'>
                 سرویس ها
             </div>
