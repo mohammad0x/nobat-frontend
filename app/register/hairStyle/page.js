@@ -36,5 +36,6 @@ export default function register_Hairstyle() {
         </section>
         </body>
         </html>
+
     )
 }
