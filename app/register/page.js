@@ -24,7 +24,7 @@ export default function Register() {
                             </form>
 
                         </div>
-                        <div className="h-96 border-l p-5">
+                        <div className="md:h-96 border-l p-5 sm:block">
 
                         </div>
                         <div className='w-auto md:w-auto bg-white rounded-lg py-5 md:py-7 px-6 lg:flex  md:items-end'>
