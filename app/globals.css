@@ -29,6 +29,11 @@
 
 .search-border {
   border: 1px solid #4b4b4b;
+  background-image: url("/search.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 9px ;
+
 }
 
 .font-size {

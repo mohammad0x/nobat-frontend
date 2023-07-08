@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from "next/link";
 
 export default function register_Hairstyle() {
     return (
@@ -33,7 +32,6 @@ export default function register_Hairstyle() {
         </section>
         </body>
         </html>
-
 
     )
 }
