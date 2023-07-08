@@ -7,6 +7,15 @@ import Suggestion from "@/app/components/homeCard/suggestion";
 import Footer from "@/app/components/footer/page";
 import Back from "@/app/components/backBtn/page";
 
+// export default async function getServiceSlide() {
+//
+//     const {data} = await axios.get('http://127.0.0.1:8000/login')
+//     console.log(data.valueOf())
+//     return (
+//         <div>d</div>
+//     )
+// }
+
 export default async function Home(){
   return(
       <html>
@@ -40,10 +49,3 @@ export default async function Home(){
   )
 }
 
-async function getServiceSlide() {
-  const {data} = await axios.get('http://127.0.0.1:8000/api/')
-  console.log(data)
-  return (
-      <div>h</div>
-  )
-}
