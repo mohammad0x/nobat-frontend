@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .marginB {
-  margin-bottom: 10.5rem !important;
+  margin-bottom: 10.3rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 3.75rem;
 }
 
 .bg-transparent-gray {

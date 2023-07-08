@@ -17,7 +17,7 @@ export default function Profile() {
             <body dir='rtl'>
                 <ProfileTop />
                 <ProfileBottom />
-                <Footer />
+                {/*<Footer />*/}
             </body>
         </html>
     )
@@ -25,7 +25,7 @@ export default function Profile() {
 
 function ProfileTop() {
     return (
-        <section className='bg-gray-950 flex flex-col justify-center items-center w-full h-64'>
+        <section className='bg-gray-950 flex flex-col items-center w-full h-screen'>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
@@ -39,19 +39,24 @@ function ProfileTop() {
 
 function ProfileBottom() {
     return (
-        <section className='bg-white rounded-t-3xl absolute top-56 w-full h-fit px-3'>
-            <div className='w-full h-24 flex justify-around items-center'>
-                <a href='#' className='w-20 h-20 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
-                    حذف اکانت
-                </a>
-                <a href='#' className='w-20 h-20 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around'>
-                    مشخصات
-                </a>
-            </div>
-            <HairStyleCard />
-            <CustomerCard />
-            <div className='w-full h-12 text-right border-t-8 border-gray-500'>
-                <h3 className='text-lg text-red-500 border-b border-gray-200 py-3'>خروج</h3>
+        <section className='flex justify-center'>
+            <div className='bg-white rounded-t-3xl md:rounded-b-2xl absolute top-56 w-full md:w-2/5 px-3 pb-3'>
+                <div className='w-full h-24 flex justify-around items-center'>
+                    <a href='#' className='w-20 h-20 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
+
+                    </a>
+                    <a href='#' className='w-20 h-20 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around'>
+
+                    </a>
+                    <a href='#' className='w-20 h-20 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around'>
+
+                    </a>
+                </div>
+                <HairStyleCard />
+                <CustomerCard />
+                <div className='w-full h-12 text-right border-t-4 border-gray-400'>
+                    <h3 className='text-lg text-red-500 border-gray-200 py-3'>خروج</h3>
+                </div>
             </div>
         </section>
     )
@@ -59,7 +64,7 @@ function ProfileBottom() {
 
 function HairStyleCard() {
     return (
-        <div className='w-full h-12 text-right marginB border-t-8 border-gray-500'>
+        <div className='w-full h-12 text-right marginB border-t-4 border-gray-400'>
             <div className='flex justify-between items-center py-3 border-b border-gray-200'>
                 <h3 className='text-lg'>سرویس های من</h3>
                 <a href="#">
@@ -85,7 +90,7 @@ function HairStyleCard() {
 
 function CustomerCard() {
     return (
-        <div className='w-full h-12 text-right mb-16 border-t-8 border-gray-500'>
+        <div className='w-full h-12 text-right mb-15 border-t-4 border-gray-400'>
             <div className='flex justify-between items-center py-3 border-b border-gray-200'>
                 <h3 className='text-lg'>تاریخچه</h3>
                 <a href="#">
