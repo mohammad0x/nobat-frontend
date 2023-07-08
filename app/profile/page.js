@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "@/app/components/footer/page";
 import '../globals.css'
 import Link from "next/link";
+import Back from "@/app/components/backBtn/page";
 
 export default function Profile() {
     return (
@@ -13,10 +14,10 @@ export default function Profile() {
                 <meta content="ie=edge"/>
                 <title> Document < /title>
             </head>
-            <body dir='rtl' className='Body bg-gray-950'>
+            <body dir='rtl'>
                 <ProfileTop />
                 <ProfileBottom />
-                {/*<Footer />*/}
+                <Footer />
             </body>
         </html>
     )
@@ -38,16 +39,19 @@ function ProfileTop() {
 
 function ProfileBottom() {
     return (
-        <section className='bg-white rounded-t-3xl absolute top-56 w-full h-64 py-6 px-3'>
-            {/*<div className='w-full h-12'>*/}
-            {/*    */}
-            {/*</div>*/}
+        <section className='bg-white rounded-t-3xl absolute top-56 w-full h-fit px-3'>
+            <div className='w-full h-24 flex justify-around items-center'>
+                <a href='#' className='w-20 h-20 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
+                    حذف اکانت
+                </a>
+                <a href='#' className='w-20 h-20 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around'>
+                    مشخصات
+                </a>
+            </div>
             <HairStyleCard />
             <CustomerCard />
-            <hr className='w-full text-3xl h3'/>
-            <div className='w-full h-12 text-right'>
+            <div className='w-full h-12 text-right border-t-8 border-gray-500'>
                 <h3 className='text-lg text-red-500 border-b border-gray-200 py-3'>خروج</h3>
-                <h3 className='text-lg text-red-500 py-3'>حذف اکانت</h3>
             </div>
         </section>
     )
@@ -55,9 +59,41 @@ function ProfileBottom() {
 
 function HairStyleCard() {
     return (
-        <div className='w-full h-12 text-right mb-10 border-t-8 border-gray-500'>
+        <div className='w-full h-12 text-right marginB border-t-8 border-gray-500'>
             <div className='flex justify-between items-center py-3 border-b border-gray-200'>
-                <h3 className='text-lg'>خروج</h3>
+                <h3 className='text-lg'>سرویس های من</h3>
+                <a href="#">
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                </a>
+            </div>
+            <div className='flex justify-between items-center py-3 border-b border-gray-200'>
+                <h3 className='text-lg'>مشاهده اکانت</h3>
+                <a href="#">
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                </a>
+            </div>
+            <div className='flex justify-between items-center py-3 border-b border-gray-200'>
+                <h3 className='text-lg'>حذف اکانت</h3>
+                <a href="#">
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                </a>
+            </div>
+            <CreateService />
+        </div>
+    )
+}
+
+function CustomerCard() {
+    return (
+        <div className='w-full h-12 text-right mb-16 border-t-8 border-gray-500'>
+            <div className='flex justify-between items-center py-3 border-b border-gray-200'>
+                <h3 className='text-lg'>تاریخچه</h3>
+                <a href="#">
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                </a>
+            </div>
+            <div className='flex justify-between items-center py-3 border-b border-gray-200'>
+                <h3 className='text-lg'>گفتگوها</h3>
                 <a href="#">
                     <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
                 </a>
@@ -66,10 +102,13 @@ function HairStyleCard() {
     )
 }
 
-function CustomerCard() {
+function CreateService() {
     return (
-        <div>
-
+        <div className='flex justify-between items-center py-3 border-b border-gray-200'>
+            <h3 className='text-lg'>ساخت اکانت</h3>
+            <a href="#">
+                <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+            </a>
         </div>
     )
 }

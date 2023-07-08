@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.footerBody {
-  background: white;
-  margin-bottom: 7rem;
+.marginB {
+  margin-bottom: 10.5rem !important;
 }
 
 .bg-transparent-gray {

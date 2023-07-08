@@ -10,9 +10,9 @@ export default function Login() {
                 <meta content="ie=edge"/>
                 <title> Document < /title>
             </head>
-            <body dir='rtl' className='footerBody'>
-                <section className='w-screen h-screen px-5 bg-gray-950 flex items-center justify-center'>
-                    <div className='w-auto md:w-auto bg-white rounded-lg py-5 md:py-7 px-6 flex flex-col-reverse md:items-center'>
+            <body dir='rtl' id='__django_nextjs_body'>
+                <section className='w-screen h-screen px-5 bg-gray-950 flex items-center justify-center'  id="__django_nextjs_body_begin">
+                    <div className='w-auto md:w-auto bg-white rounded-lg py-5 md:py-7 px-6 flex flex-col-reverse md:items-center lg:flex-row'>
                         <div className='flex items-center flex-col mt-6 md:mt-0 md:ms-6'>
                             <h1 className='text-4xl italic mb-4'>ورود</h1>
                             <form action="" className='flex flex-col mt-5 items-center'>
@@ -25,7 +25,7 @@ export default function Login() {
                         </div>
                         <div className="md:h-96 border-l p-5 sm:block"></div>
                         <div className='w-full flex items-center justify-center flex-col mt-6 md:mt-0 md:ms-6'>
-                            <img src="/imageOrg.png" alt="" className='w-48 h-48'/>
+                            <img src="/imageOrg.png" alt="" className='w-48 h-48 md:w-96 md:h-96'/>
                         </div>
                     </div>
                 </section>
@@ -33,3 +33,40 @@ export default function Login() {
         </html>
     )
 }
+import axios from "axios";
+import {console} from "next/dist/compiled/@edge-runtime/primitives";
+
+
+// export async function GetServerSideProps(context) {
+//     const { req } = context;
+//     let props = {};
+//     if (req.method === "POST") {
+//         const body = await getRawBody(req);
+//         props = JSON.parse(JSON.parse(body));
+//     }
+//     console.log(props)
+//     return { props };
+// }
+
+// export default async function GetServiceSlide() {
+//     // console.log('context')
+//     const {data} = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+//     console.log(data)
+//     console.log(data.title)
+//     return (
+//         <p>{data.title}</p>
+//     )
+// }
+
+// export default async function handler(req, res) {
+//     if (req.method === 'GET') {
+//         res.status(200).json({message:'GET'})
+//     } else if (req.method === 'POST') {
+//         res.status(200).json({message:'POST'})
+//     } else {
+//         console.log(req)
+//     }
+//     return (
+//         <p>aaaaaaa</p>
+//     )
+// }
