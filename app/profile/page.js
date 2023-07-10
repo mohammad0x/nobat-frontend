@@ -24,7 +24,7 @@ export default function Profile() {
 
 function ProfileTop() {
     return (
-        <section className='bg-gray-950 flex flex-col items-center w-full h-screen h-100'>
+        <section className='bg-gray-950 flex flex-col items-center w-full h-100'>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
@@ -39,7 +39,7 @@ function ProfileTop() {
 function ProfileBottom() {
     return (
         <section className='flex justify-center'>
-            <div className='bg-white rounded-t-3xl lg:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-0'>
+            <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-1'>
                 <div className='w-full h-20 flex justify-around items-center'>
                     <a href='#' className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
 
