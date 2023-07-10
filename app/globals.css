@@ -61,3 +61,9 @@
     height: 40.1rem !important;
   }
 }
+
+@media (min-width: 1024px) {
+  .w-98 {
+    width: 28rem !important;
+  }
+}
