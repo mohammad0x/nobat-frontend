@@ -1,7 +1,7 @@
 import Footer from "@/app/components/footer/page";
 import React from "react";
 
-export default function HairStyle() {
+export default function Post() {
     return (
         <html lang="en">
             <head>
@@ -17,3 +17,4 @@ export default function HairStyle() {
         </html>
     )
 }
+

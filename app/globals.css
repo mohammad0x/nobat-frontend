@@ -67,3 +67,7 @@
     width: 28rem !important;
   }
 }
+
+.text-2sm {
+  font-size: .7rem;
+}

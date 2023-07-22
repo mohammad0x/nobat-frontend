@@ -23,8 +23,6 @@ export default function NewService() {
 
                             <input type="text" name='desc' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='توضیحات'/>
 
-                            <input type="text" name='phone' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='شماره همراه'/>
-
                             <div className='flex justify-around w-1/2 mt-3 mb-3'>
                                 <label htmlFor="True">فعال</label>
                                 <input type="radio" id="True" name="status" value="True" className='w-6 h-6 border-1'/>
