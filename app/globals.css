@@ -60,6 +60,10 @@
   .h-100 {
     height: 40.1rem !important;
   }
+
+  .w-92 {
+    width: 26rem !important;
+  }
 }
 
 @media (min-width: 1024px) {

@@ -23,7 +23,7 @@ export default function HairStyle() {
 
 function Comments() {
     return (
-        <div className='w-11/12 p-3 rounded-lg shadow shadow-gray-400 flex justify-between bg-gray-50 mb-5'>
+        <div className='w-11/12 md:w-1/2 p-3 rounded-lg shadow shadow-gray-400 flex justify-between bg-gray-50 mb-5'>
             <img src="/Landscape-Color.jpg" className='w-16 h-16 rounded-full' alt="user-profile"/>
             <div className='text-right w-5/6 pr-2'>
                 <div className='flex mb-1'>
@@ -82,35 +82,35 @@ function Review(){
                     <div className="rating-divided">
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 5</span>
-                            <div className="progress mx-2 w-36 h-4 bg-gray-200 rounded-xl">
+                            <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-5' role="progressbar"></div>
                             </div>
                             <span className="rating-value">1,985</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 4</span>
-                            <div className="progress mx-2 w-36 h-4 bg-gray-200 rounded-xl">
+                            <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-4' role="progressbar"></div>
                             </div>
                             <span className="rating-value">356</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 3</span>
-                            <div className="progress mx-2 w-36 h-4 bg-gray-200 rounded-xl">
+                            <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-3' role="progressbar"></div>
                             </div>
                             <span className="rating-value">130</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 2</span>
-                            <div className="progress mx-2 w-36 h-4 bg-gray-200 rounded-xl">
+                            <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-2' role="progressbar"></div>
                             </div>
                             <span className="rating-value">90</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1.5' alt=""/> 1</span>
-                            <div className="progress mx-2 w-36 h-4 bg-gray-200 rounded-xl">
+                            <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar " id='star-1' role="progressbar"></div>
                             </div>
                             <span className="rating-value">33</span>
