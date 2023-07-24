@@ -30,13 +30,13 @@ function Collapse() {
     return (
         <section className='flex h-28 bg-white'>
             <ul className='w-full h-full flex justify-around text-lg bg-gray-950 pt-4'>
-                <li className='w-24 h-full bg-white rounded-lg'>
+                <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
                     <p className='w-full h-full flex justify-center items-center'>سرویس ها</p>
                 </li>
-                <li className='w-24 h-full bg-white rounded-lg'>
-                    <Link className='w-full h-full flex justify-center items-center' href='post'>نمونه کارها</Link>
+                <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
+                    <Link href='post' className='w-full h-full flex justify-center items-center'>نمونه کارها</Link>
                 </li>
-                <li className='w-24 h-full bg-gray-200 rounded-lg'>
+                <li className='w-24 md:w-52 w-92 h-full bg-gray-200 rounded-lg'>
                     <Link href='review' className='w-full h-full flex justify-center items-center'>نظرات</Link>
                 </li>
             </ul>
