@@ -29,29 +29,11 @@ export default function Post() {
     )
 }
 
-function SimpleSlider (){
-            const settings = {
-                dots: true,
-                infinite: false,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            };
-            return (
-                <div className='flex items-center bg-gray-950 w-screen'>
-                    <Slider {...settings}>
-
-                    </Slider>
-                </div>
-            );
-
-}
-
 function Posts(){
     return (
-        <div className='w-72 md:w-80 h-80 md:h-96 relative rounded-lg mb-5 bg-gray-100'>
-            <img src="/Landscape-Color.jpg" alt="post" className='w-full h-72 md:h-80 bg-cover rounded-t-lg'/>
-            <div className="flex items-center justify-around h-full text-sm">
+        <div className='w-72 h-72 relative rounded-lg mb-5 bg-gray-100'>
+            <img src="/Landscape-Color.jpg" alt="post" className='w-full h-full bg-cover rounded-t-lg'/>
+            <div className="flex items-center justify-around absolute right-2 bottom-3 text-sm">
                 <form method='POST' className='w-20 h-12 rounded-xl border border-gray-800 flex items-center justify-center ml-2'>
                     <button>
                         <div>
