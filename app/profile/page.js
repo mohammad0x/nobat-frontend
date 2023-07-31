@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from "next/link";
 import Back from "@/app/components/backBtn/page";
 
-function Profile() {
+export default function Profile() {
     return (
         <html lang="en">
             <head>
@@ -18,7 +18,7 @@ function Profile() {
                 <ProfileTop />
                 <ProfileBottom />
                 <Footer />
-                {/*<Handler />*/}
+                <Handler />
             </body>
         </html>
     )
@@ -43,7 +43,7 @@ function ProfileBottom() {
         <section className='flex justify-center'>
             <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-1'>
                 <div className='w-full h-20 flex justify-around items-center'>
-                    <Link href="/delete_user/{requset.username}" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
+                    <Link href="/delete_user/{jsObject.profile[1].id}" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
                         delete</Link>
 
                     <Link href="#" className='w-16 h-16 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around' >
@@ -138,12 +138,19 @@ function Footer() {
 }
 
 
-export default async function Handler(req, res) {
+async function Handler(req, res) {
     const data  = req
-    console.log(data)
+    const obj = data.searchParams
+    for (let y in obj){
+        var jsObject = JSON.parse(y);
+        console.log(jsObject.profile)
 
+    }
 
     return (
-        <p>hello</p>
+
+        <div>
+            {data.data}
+        </div>
     )
 }

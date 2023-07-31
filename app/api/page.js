@@ -1,37 +1,24 @@
-// export default async function handler(req, res) {
-//     if (req.method === 'GET') {
-//         res.status(200).json({message:'GET'})
-//     } else if (req.method === 'POST') {
-//         res.status(200).json({message:'POST'})
-//     } else {
-//         console.log( req.method === undefined)
-//         console.log(req)
-//     }
-//     return (
-//         <p>aaaaaaa</p>
-//     )
-// }
-
 
 import React from "react";
 
-export default async function handler(req, res) {
-    const data  = req
-    const obj = data.searchParams
-    for (let y in obj){
-        const jsObject = JSON.parse(y);
-        console.log(jsObject.profile[1].id)
 
+export default async function handler(req , res){
+    const data = req
+    const obj =  data.searchParams
+    let y = getDate(obj)
 
-
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
         }
+        return jsObject
+    }
 
 
-
-    return (
-
+    return(
         <div>
-            {data.data}
+            <p>al{y.profile[0].id}</p>
         </div>
     )
 }
+
