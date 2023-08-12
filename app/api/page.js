@@ -3,8 +3,7 @@ import React from "react";
 
 
 export default async function handler(req , res){
-    const data = req
-    const obj =  data.searchParams
+    const obj =  req.searchParams
     let y = getDate(obj)
 
     function getDate(obj){
@@ -13,11 +12,11 @@ export default async function handler(req , res){
         }
         return jsObject
     }
-
+    console.log(y)
 
     return(
         <div>
-            <p>al{y.profile[0].id}</p>
+            <p>{y.id}aa</p>
         </div>
     )
 }

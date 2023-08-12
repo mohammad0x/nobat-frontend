@@ -3,7 +3,18 @@ import '../globals.css'
 import Link from "next/link";
 import Back from "@/app/components/backBtn/page";
 
-export default function Profile() {
+export default function Profile(req, res) {
+    console.log(req)
+    const obj =  req.searchParams
+    let y = getDate(obj)
+
+    function getDate(obj){
+        for(let profile in obj){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+    console.log(y)
     return (
         <html lang="en">
             <head>
@@ -14,7 +25,7 @@ export default function Profile() {
                 <title> Document < /title>
             </head>
             <body dir='rtl'>
-                <ProfileTop />
+                <ProfileTop data={y} />
                 <ProfileBottom />
                 <Footer />
                 <Handler />
@@ -23,14 +34,18 @@ export default function Profile() {
     )
 }
 
-function ProfileTop() {
+function ProfileTop(data) {
+    console.log('ggggggggggggggggggggggggg')
+    console.log(data.data.photo)
+    const image = 'http://127.0.0.1:3000' + data.data.photo
     return (
+
         <section className='bg-gray-950 flex flex-col items-center w-full h-100'>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
-                    <img src="/imageOrg.png" alt="profileImage" className='w-28 h-28 rounded-full'/>
-                    <Link href='#' className='w-11 h-11 rounded-full bg-red-700 absolute -bottom-3.5 -left-0.5'></Link>
+                    <img src={image} alt="profileImage" className='w-28 h-28 rounded-full'/>
+                    <Link href='edit/' className='w-11 h-11 rounded-full bg-red-700 absolute -bottom-3.5 -left-0.5'></Link>
                 </div>
             </div>
         </section>

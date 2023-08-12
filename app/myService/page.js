@@ -2,7 +2,22 @@ import Footer from "@/app/components/footer/page";
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 
-export default function myService() {
+export default function myService(req , res){
+    const obj =  req.searchParams
+    let y = getDate(obj)
+    console.log(y)
+
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+    const list = []
+    for (let cate in y){
+        list.push([cate.id, cate.title])
+    }
+    console.log(list)
     return (
         <html lang="en">
             <head>
@@ -19,18 +34,18 @@ export default function myService() {
                 </header>
                 <section className='flex flex-col items-center py-4'>
                     <AddBtn />
-                    <Services />
+                    <Services data={y}/>
                 </section>
             </body>
         </html>
     )
 }
 
-function Services() {
+function Services(data) {
     return (
         <div className='w-72 md:w-96 h-28 md:h-32 shadow rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3'>
             <div className='flex justify-between mb-3 items-center'>
-                <h1 className='text-2xl'>مدل المانی</h1>
+                <h1 className='text-2xl'>{data.title}</h1>
                 <h2 className='text-lg'>220000 تومان</h2>
             </div>
             <div className='flex justify-between items-center'>

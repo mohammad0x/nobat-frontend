@@ -1,7 +1,27 @@
 import React from "react";
 import Back from "@/app/components/backBtn/page";
+import {options} from "axios";
+import {list} from "postcss";
 
-export default function createService() {
+export default function createService(req, res) {
+    const obj =  req.searchParams
+    let y = getDate(obj)
+
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    const list = []
+    for (let cate of y.category){
+        list.push([cate.id, cate.title])
+    }
+    // console.log(list)
+    // console.log(y)
+
+
     return (
         <html lang="en">
             <head>
@@ -18,7 +38,11 @@ export default function createService() {
                         <h1 className='text-2xl md:text-3xl mb-4'>ساخت اکانت</h1>
                         <form method='POST' className='w-full h-full text-center flex flex-col items-center'>
                             <select name="category" id="category" className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b'>
-                                <option value="">ارایشگاه</option>
+                                {list.map(item => {
+                                    return (
+                                        <option value={item[0]}>{item[1]}</option>
+                                    )
+                                })}
                             </select>
 
                             <input type="text" name='title' className='w-64 md:w-96 h-10 md:h-12 mb-2 border-0 border-b' placeholder='title'/>

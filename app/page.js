@@ -22,7 +22,7 @@ export default async function Home(){
           <head>
               <meta charSet="UTF-8"/>
               <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-              <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+              <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
               <title>نوبت</title>
           </head>
           <body dir='rtl' className='footerBody'>
@@ -34,7 +34,6 @@ export default async function Home(){
                   </div>
                   <HairStyle />
               </section>
-
               <div className="w-full border-t pb-3 bt-3"></div>
               <section className='py-6 px-3 sm:px-8 mb-10 pt-3 h-4/6 md:h-4/6 '>
                   <div className='relative'>

@@ -15,7 +15,7 @@ export default function register_Hairstyle() {
             <div className=' w-auto md:w-auto bg-white rounded-lg py-4 md:py-7 px-6 flex flex-col-reverse md:flex-row md:items-center'>
                 <div className='flex items-center flex-col md:mt-0 md:ms-6'>
                     <h1 className='text-3xl md:text-4xl italic'>Register hairStyle</h1>
-                    <form action="" className='flex flex-col mt-5 items-center'>
+                    <form method='POST' className='flex flex-col mt-5 items-center'>
                         <input type="text" name="username" id="username" className=' border-b w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 border-0  ' placeholder='نام کابری'/>
                         <input type="email" name="email" id="email" className=' border-b w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 border-0 ' placeholder='ایمیل'/>
                         <input type="password" name='password' className='border-b w-64 md:w-72 lg:w-80 h-8 lg:h-10 rounded mb-4 border-0 ' placeholder='رمزعبور'/>
