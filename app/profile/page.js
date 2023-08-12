@@ -4,7 +4,18 @@ import axios from 'axios';
 import Link from "next/link";
 import Back from "@/app/components/backBtn/page";
 
-export default function Profile() {
+export default function Profile(context) {
+    const obj =  context.searchParams
+    let y = getDate(obj)
+    // console.log(y.id)
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+
     return (
         <html lang="en">
             <head>
@@ -18,13 +29,13 @@ export default function Profile() {
                 <ProfileTop />
                 <ProfileBottom />
                 <Footer />
-                <Handler />
             </body>
         </html>
     )
 }
 
-function ProfileTop() {
+function ProfileTop(y) {
+    console.log()
     return (
         <section className='bg-gray-950 flex flex-col items-center w-full h-100'>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
@@ -43,7 +54,7 @@ function ProfileBottom() {
         <section className='flex justify-center'>
             <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-1'>
                 <div className='w-full h-20 flex justify-around items-center'>
-                    <Link href="/delete_user/{jsObject.profile[1].id}" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
+                    <Link href="/delete_user" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
                         delete</Link>
 
                     <Link href="#" className='w-16 h-16 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around' >
@@ -138,19 +149,12 @@ function Footer() {
 }
 
 
-async function Handler(req, res) {
-    const data  = req
+
+export async function handler(req , res ) {
+    const data = req
     const obj = data.searchParams
-    for (let y in obj){
-        var jsObject = JSON.parse(y);
-        console.log(jsObject.profile)
 
+    return {
+        props: {profile: obj}
     }
-
-    return (
-
-        <div>
-            {data.data}
-        </div>
-    )
 }
