@@ -1,23 +1,21 @@
-CategoryService |
-CategoryCreate |
+CategoryService ||
+CategoryCreate ||
+profile ||
+edit profile ||
+home ||
+login ||
+register ||
+CreateService ||
 search |
 reserve |
-profile |
-edit profile |
 nobat |
-home |
-login |
-register |
 history |
 myService |
-CreateService |
 edit CreateService |
 add post |
 phone ( 2 page ) |
 password reset ( 5 page ) |
 Search service |
 Service |
-hairstyle
-delete account
-edit CategoryService
-edit CategoryCreate
+delete account |
+hairstyle |
