@@ -1,4 +1,4 @@
-export default function Reserve() {
+export default function Reserve({params}) {
     console.log(y)
     return (
         <html lang="en">

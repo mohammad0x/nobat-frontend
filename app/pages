@@ -1,11 +1,11 @@
 CategoryService ||
 CategoryCreate ||
-profile ||
-edit profile ||
-home ||
+profile || \
+edit profile || \
+home || \
 login ||
 register ||
-CreateService ||
+CreateService || \
 search |
 reserve |
 nobat |
