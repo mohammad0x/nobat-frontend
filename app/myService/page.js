@@ -5,17 +5,17 @@ import Back from "@/app/components/backBtn/page";
 export default function myService(req , res){
     const obj =  req.searchParams
     let y = getDate(obj)
-    console.log(y)
 
     function getDate(obj){
-        for(let profile in obj ){
+        for(let profile in obj){
             var jsObject =  JSON.parse(profile);
         }
         return jsObject
     }
     const list = []
-    for (let cate in y){
-        list.push([cate.id, cate.title])
+    for (let cate of y.my_service){
+        console.log(cate)
+        list.push(cate)
     }
     console.log(list)
     return (
@@ -34,7 +34,11 @@ export default function myService(req , res){
                 </header>
                 <section className='flex flex-col items-center py-4'>
                     <AddBtn />
-                    <Services data={y}/>
+                    {list.map(item => {
+                        return (
+                            <Services data={item}/>
+                        )
+                    })}
                 </section>
             </body>
         </html>
@@ -42,14 +46,15 @@ export default function myService(req , res){
 }
 
 function Services(data) {
+    const service = data.data
     return (
-        <div className='w-72 md:w-96 h-28 md:h-32 shadow rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3'>
+        <div className='w-72 md:w-96 h-28 md:h-32 shadow rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3 mb-4'>
             <div className='flex justify-between mb-3 items-center'>
-                <h1 className='text-2xl'>{data.title}</h1>
-                <h2 className='text-lg'>220000 تومان</h2>
+                <h1 className='text-2xl'>{service.title}</h1>
+                <h2 className='text-lg'>{service.price} تومان</h2>
             </div>
             <div className='flex justify-between items-center'>
-                <p>با کیفیت و سرعت بالا</p>
+                <p>{service.desc}</p>
                 <div className='flex w-20 items-center justify-around'>
                     <a href="#" className='w-7 h-7 bg-green-800 rounded shadow hover:shadow-lg'></a>
                     <a href="#" className='w-7 h-7 bg-red-800 rounded shadow hover:shadow-lg'></a>
