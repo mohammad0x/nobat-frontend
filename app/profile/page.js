@@ -1,7 +1,6 @@
 import React from "react";
 import '../globals.css'
 import Link from "next/link";
-import Back from "@/app/components/backBtn/page";
 
 export default function Profile(req, res) {
     console.log(req)
@@ -28,18 +27,14 @@ export default function Profile(req, res) {
                 <ProfileTop data={y} />
                 <ProfileBottom />
                 <Footer />
-                <Handler />
             </body>
         </html>
     )
 }
 
 function ProfileTop(data) {
-    console.log('ggggggggggggggggggggggggg')
-    console.log(data.data.photo)
     const image = 'http://127.0.0.1:3000' + data.data.photo
     return (
-
         <section className='bg-gray-950 flex flex-col items-center w-full h-100'>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
@@ -57,7 +52,7 @@ function ProfileBottom() {
         <section className='flex justify-center'>
             <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-1'>
                 <div className='w-full h-20 flex justify-around items-center'>
-                    <Link href="/delete_user/{jsObject.profile[1].id}" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
+                    <Link href="/delete_user" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
                         delete</Link>
 
                     <Link href="#" className='w-16 h-16 shadow border border-gray-300 text-gray-600 hover:shadow-lg duration-500 rounded flex items-center justify-around' >
@@ -94,7 +89,7 @@ function HairStyleCard() {
             <div className='flex justify-between items-center py-2 border-b border-gray-200'>
                 <h3 className='text-lg'>حذف اکانت</h3>
                 <a href="#">
-                <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
                 </a>
             </div>
             <CreateService />
@@ -148,23 +143,5 @@ function Footer() {
                 <a href="/profile" id='profile'>پروفایل</a>
             </li>
         </section>
-    )
-}
-
-
-async function Handler(req, res) {
-    const data  = req
-    const obj = data.searchParams
-    for (let y in obj){
-        var jsObject = JSON.parse(y);
-        console.log(jsObject.profile)
-
-    }
-
-    return (
-
-        <div>
-            {data.data}
-        </div>
     )
 }
