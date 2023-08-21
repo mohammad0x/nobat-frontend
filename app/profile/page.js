@@ -76,9 +76,9 @@ function HairStyleCard() {
         <div className='w-full h-11 text-right marginB border-t-4 border-gray-400 px-3'>
             <div className='flex justify-between items-center py-2 border-b border-gray-200'>
                 <h3 className='text-lg'>سرویس های من</h3>
-                <a href="#">
+                <Link href="../myService">
                     <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
-                </a>
+                </Link>
             </div>
             <div className='flex justify-between items-center py-2 border-b border-gray-200'>
                 <h3 className='text-lg'>مشاهده اکانت</h3>

@@ -1,6 +1,7 @@
 import Footer from "@/app/components/footer/page";
 import React from "react";
 import Back from "@/app/components/backBtn/page";
+import Link from "next/link";
 
 export default function myService(req , res){
     const obj =  req.searchParams
@@ -47,6 +48,8 @@ export default function myService(req , res){
 
 function Services(data) {
     const service = data.data
+    let edit = '/edit_service/' + service.id
+    let deletee = '/delete_service/' + service.id
     return (
         <div className='w-72 md:w-96 h-28 md:h-32 shadow rounded-lg border border-gray-400 bg-white flex justify-center flex-col py-6 px-3 mb-4'>
             <div className='flex justify-between mb-3 items-center'>
@@ -56,8 +59,8 @@ function Services(data) {
             <div className='flex justify-between items-center'>
                 <p>{service.desc}</p>
                 <div className='flex w-20 items-center justify-around'>
-                    <a href="#" className='w-7 h-7 bg-green-800 rounded shadow hover:shadow-lg'></a>
-                    <a href="#" className='w-7 h-7 bg-red-800 rounded shadow hover:shadow-lg'></a>
+                    <Link href={edit} className='w-7 h-7 bg-green-800 rounded shadow hover:shadow-lg'></Link>
+                    <Link href={deletee} className='w-7 h-7 bg-red-800 rounded shadow hover:shadow-lg'></Link>
                 </div>
             </div>
         </div>
