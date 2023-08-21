@@ -8,9 +8,9 @@ register ||
 CreateService || \
 myService ||
 reserve ||
-search |
+history ||
 nobat |
-history |
+search |
 edit CreateService |
 add post |
 phone ( 2 page ) |

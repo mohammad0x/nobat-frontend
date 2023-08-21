@@ -1,7 +1,21 @@
 import React from "react";
 import HairStyle from '../components/hairStyle'
 import Footer from "@/app/components/footer/page";
-export default function Search() {
+export default function Search(req , res){
+    const obj =  req.searchParams
+    let y = getDate(obj)
+    let newService = y.CreateServiceNew
+    let scoreService = y.CreateServiceScore
+
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    console.log(newService)
+
     return (
     <html lang = "en" >
         <head>
@@ -11,12 +25,16 @@ export default function Search() {
             <title > Document < /title>
         </head>
         <body dir='rtl'>
-           <header className='bg-gray-950 h-40 flex justify-center items-center'>
-               <input type="search" className='search-border rounded-sm w-2/3  p-3 bg-gray-950 font-size placeholder:text-right placeholder:text-gray-300' placeholder='سرویس مورد نظر خود را جستجو کنید...'/>
-           </header>
+           <form method="POST" className='bg-gray-950 h-40 flex justify-center items-center text-gray-300'>
+               <input type="search" name='search' className='search-border rounded-sm w-2/3  p-3 bg-gray-950 font-size placeholder:text-right placeholder:text-gray-300' placeholder='سرویس مورد نظر خود را جستجو کنید...'/>
+           </form>
             <section className='px-8 py-6'>
                 <h1 className='text-3xl font-bold'>بالاترین امتیاز</h1>
-                <HairStyle />
+                {newService.map(item => {
+                    return (
+                        <HairStyle data={item} />
+                    )
+                })}
             </section>
            <div className="w-full border-t pb-3 bt-3"></div>
            <section className='px-8 py-6'>

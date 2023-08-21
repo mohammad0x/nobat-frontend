@@ -12,19 +12,12 @@ export default async function handler(req , res){
         }
         return jsObject
     }
-    // console.log(y)
-    // return {
-    //     props :  { profile : obj }
-    // }
-    // let y = getDate(obj)
-    //
-    // function getDate(obj){
-    //     for(let profile in obj ){
-    //         var jsObject =  JSON.parse(profile);
-    //     }
-    //     return jsObject
-    // }
 
+    const list = []
+    for (let cate of y.category){
+        list.push([cate.id, cate.title])
+    }
+    console.log(list)
     // return(
     //     <div>
     //         <p>al{y.profile[0].id}</p>

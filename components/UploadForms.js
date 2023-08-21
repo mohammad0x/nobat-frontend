@@ -28,10 +28,10 @@ export default function UploadForm(){
         const res =await uploadPhoto(formData)
     }
     return(
-        <div>
-            <form action={handleUpload} ref={formRef}>
+        // <div>
+            <form action={handleUpload} ref={formRef} method='' className='w-full h-full text-center flex flex-col items-center'>
                 <div>
-                    <input type="file" accept='image/*' multiple onChange={handleInputFiles}/>
+                    <input type="file" className='w-64 md:w-96 h-10 md:h-12 mb-10 border-0 border-b border-b-gray-400 text-sm' accept='image/*' multiple onChange={handleInputFiles}/>
                 </div>
                 <div>
                     {
@@ -40,11 +40,14 @@ export default function UploadForm(){
                         ))
                     }
                 </div>
-                <div>
-                    <ButtonSubmit value="Upload to "/>
-                </div>
+                <ButtonSubmit type="submit" value='Upload to'/>
+                {/*<form action={handleUpload} ref={formRef}>*/}
+                {/*    <div>*/}
+                {/*        <ButtonSubmit value="Upload to "/>*/}
+                {/*    </div>*/}
+                {/*</form>*/}
             </form>
-        </div>
+        // </div>
     )
 }
 // https://www.youtube.com/watch?v=JggXd2n4qH4
