@@ -28,18 +28,26 @@ export default function Search(req , res){
            <form method="POST" className='bg-gray-950 h-40 flex justify-center items-center text-gray-300'>
                <input type="search" name='search' className='search-border rounded-sm w-2/3  p-3 bg-gray-950 font-size placeholder:text-right placeholder:text-gray-300' placeholder='سرویس مورد نظر خود را جستجو کنید...'/>
            </form>
-            <section className='px-8 py-6'>
+            <section className='px-8 py-3'>
                 <h1 className='text-3xl font-bold'>بالاترین امتیاز</h1>
-                {newService.map(item => {
-                    return (
-                        <HairStyle data={item} />
-                    )
-                })}
+                <div className='mt-5'>
+                    {newService.map(item => {
+                        return (
+                            <HairStyle data={item} />
+                        )
+                    })}
+                </div>
             </section>
            <div className="w-full border-t pb-3 bt-3"></div>
-           <section className='px-8 py-6'>
+           <section className='px-8 py-3'>
                 <h1 className='text-3xl font-bold'>تازه ها</h1>
-                <HairStyle />
+                <div className='mt-5'>
+                   {newService.map(item => {
+                       return (
+                           <HairStyle data={item} />
+                       )
+                   })}
+                </div>
             </section>
             <Footer title='search'/>
         </body>
