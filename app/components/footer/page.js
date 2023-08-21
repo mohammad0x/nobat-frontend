@@ -6,13 +6,13 @@ export default function Footer() {
                 <Link href="/" id='home'>خانه</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-200'>
-                <Link href="/nobat" id='nobat'>نوبت ها</Link>
+                <Link href="/nobat/" id='nobat'>نوبت ها</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-200'>
-                <Link href="/search" id='search'>جستجو</Link>
+                <Link href="/search/" id='search'>جستجو</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-200'>
-                <Link href="/profile" id='profile'>پروفایل</Link>
+                <Link href="/profile/" id='profile'>پروفایل</Link>
             </li>
         </section>
     )

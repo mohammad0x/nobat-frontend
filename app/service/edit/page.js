@@ -1,7 +1,22 @@
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 
-export default function NewService() {
+export default function NewService(req , res){
+    const obj =  req.searchParams
+    let y = getDate(obj)
+
+    function getDate(obj){
+        for(let profile in obj){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    const list = []
+    for (let cate of y.category){
+        list.push(cate)
+    }
+    console.log(list)
     return (
         <html lang="en">
             <head>
@@ -17,13 +32,19 @@ export default function NewService() {
                     <div className='w-72 md:w-1/2 w-98 bg-white pt-6 rounded text-center'>
                         <h1 className='text-2xl md:text-3xl mb-4'>ویرایش سرویس</h1>
                         <form method='POST' className='w-full h-full text-center flex flex-col items-center'>
-                            <input type="text" name='title' value='title' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='title'/>
+                            <select name="category"  className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b'>
+                                {list.map(item => {
+                                    return (
+                                        <option value={item.id} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b'>{item.title}</option>
+                                    )
+                                })}
+                            </select>
 
-                            <input type="number" name='price' value='11111' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='قیمت'/>
+                            <input type="text" name='title' defaultValue={y.category.title} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='title'/>
 
-                            <input type="text" name='desc' value='desc' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='توضیحات'/>
+                            <input type="number" name='price' defaultValue={y.category.price} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='قیمت'/>
 
-                            <input type="text" name='phone' value='phone' className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='شماره همراه'/>
+                            <input type="text" name='desc' defaultValue={y.category.desc} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='توضیحات'/>
 
                             <div className='flex justify-around w-1/2 mt-3 mb-3'>
                                 <label htmlFor="True">فعال</label>
