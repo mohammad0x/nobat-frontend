@@ -3,11 +3,36 @@ import React from "react";
 import Link from "next/link";
 import HeaderHair from "@/app/hairStyle/header";
 import About from "@/app/hairStyle/about";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-export default function Post() {
+export default function Post(req , res){
+    const obj =  req.searchParams
+    let y = getDate(obj)
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    const profile = {}
+    for (let cate of y.profile){
+        profile.data = {
+            'address':cate.address,
+            'city':cate.city,
+            'phone':cate.phone,
+            'first_name':cate.first_name,
+            'last_name':cate.last_name,
+            'slug': y.slug
+        }
+    }
+
+    const create = {
+        'title': y.title,
+        'slug': y.slug,
+        'image': y.image,
+        'score': y.score,
+        'comment': y.comment,
+    }
     return (
         <html lang="en">
             <head>
@@ -18,33 +43,43 @@ export default function Post() {
                 <title> Document < /title>
             </head>
             <body dir='rtl'>
-                <HeaderHair />
-                <Collapse />
-                <section className='bg-gray-950 flex flex-col items-center justify-center py-6'>
-                    <Posts />
-                </section>
-                <About />
+                <HeaderHair data={create}/>
+                <Collapse data={y.id}/>
+                <div className='flex items-center flex-col bg-gray-950 py-6 mb-80'>
+                    {y.post.map(item => {
+                        return(
+                            <Posts data={item}/>
+                        )
+                    })}
+                </div>
+                <About data={profile}/>
             </body>
         </html>
     )
 }
 
-function Posts(){
+function Posts(data){
+    const id = data.data[2]
+    const image = data.data[3]
+    const like_url = '../../hairstylistpage-like/'+ id
+    const dislike_url = '../../hairstylistpage-dislike/'+ id
     return (
         <div className='w-72 h-72 relative rounded-lg mb-5 bg-gray-100'>
-            <img src="/Landscape-Color.jpg" alt="post" className='w-full h-full bg-cover rounded-t-lg'/>
+            <img src={image} alt="post" className='w-full h-full bg-cover rounded-t-lg'/>
             <div className="flex items-center justify-around absolute right-2 bottom-3 text-sm">
-                <form method='POST' className='w-20 h-12 rounded-xl border border-gray-800 flex items-center justify-center ml-2'>
-                    <button>
+                <form method='POST' action={like_url} className='w-20 h-12 rounded-xl border border-gray-800 flex items-center justify-center ml-2'>
+                    <input type="hidden" value={id} name='like-post'/>
+                    <button name='like-post'>
                         <div>
-                            Like
+                            {data.data[0]}Like
                         </div>
                     </button>
                 </form>
-                <form method='POST' className='w-20 h-12 rounded-xl border border-gray-800 flex items-center justify-center'>
-                    <button>
+                <form method='POST' action={dislike_url} className='w-20 h-12 rounded-xl border border-gray-800 flex items-center justify-center'>
+                    <input type="hidden" value={id} name='dislike-post'/>
+                    <button name='dislike-post'>
                         <div>
-                            DisLike
+                            {data.data[1]}DisLike
                         </div>
                     </button>
                 </form>
@@ -53,18 +88,21 @@ function Posts(){
     )
 }
 
-function Collapse() {
+function Collapse(data) {
+    let id = data.data
+    const service = '../service/'+id
+    const review = '../review/'+id
     return (
         <section className='flex h-28 bg-white'>
             <ul className='w-full h-full flex justify-around text-lg bg-gray-950 pt-4'>
                 <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
-                    <Link href='service' className='w-full h-full flex justify-center items-center'>سرویس ها</Link>
+                    <Link href={service} className='w-full h-full flex justify-center items-center'>سرویس ها</Link>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
                     <p className='w-full h-full flex justify-center items-center'>نمونه کارها</p>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-gray-200 rounded-lg'>
-                    <Link href='review' className='w-full h-full flex justify-center items-center'>نظرات</Link>
+                    <Link href={review} className='w-full h-full flex justify-center items-center'>نظرات</Link>
                 </li>
             </ul>
         </section>

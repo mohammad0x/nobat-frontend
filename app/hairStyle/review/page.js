@@ -3,7 +3,43 @@ import HeaderHair from "@/app/hairStyle/header";
 import Link from "next/link";
 import About from "@/app/hairStyle/about";
 
-export default function HairStyle() {
+export default function HairStyle(req , res){
+    const obj =  req.searchParams
+    let y = getDate(obj)
+
+    function getDate(obj){
+        for(let profile in obj){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    // const list = []
+    // for (let cate of y){
+    //     list.push(cate)
+    // }
+
+    const profile = {}
+    for (let cate of y.profile){
+        profile.data = {
+            'address':cate.address,
+            'city':cate.city,
+            'phone':cate.phone,
+            'first_name':cate.first_name,
+            'last_name':cate.last_name,
+            'slug': y.slug,
+        }
+    }
+    console.log(y.reviews)
+
+    const create = {
+        'title': y.title,
+        'slug': y.slug,
+        'image': y.image,
+        'score': y.score,
+        'comment': y.comment,
+    }
+
     return (
         <html lang="en">
             <head>
@@ -14,10 +50,16 @@ export default function HairStyle() {
                 <title> Document < /title>
             </head>
             <body dir='rtl'>
-                <HeaderHair />
-                <Collapse />
-                <Review />
-                <About />
+                <HeaderHair data={create}/>
+                <Collapse data={y.id}/>
+                <div className='mb-80'>
+                    {y.reviews.map(item => {
+                        return(
+                            <Review data={item}/>
+                        )
+                    })}
+                </div>
+                <About data={profile.data}/>
             </body>
         </html>
     )
@@ -44,9 +86,6 @@ function Comments() {
             </div>
             <div className='py-2'>
                 <Reply />
-                <Reply />
-                <Reply />
-                <Reply />
             </div>
         </div>
     )
@@ -65,18 +104,21 @@ function Reply() {
     )
 }
 
-function Collapse() {
+function Collapse(data) {
+    let id = data.data
+    const service = '../service/'+id
+    const post = '../post/'+id
     return (
         <section className='flex h-28 bg-white'>
             <ul className='w-full h-full flex justify-around text-lg bg-gray-950 pt-4'>
                 <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
-                    <Link href='service' className='w-full h-full flex justify-center items-center'>سرویس ها</Link>
+                    <Link href={service} className='w-full h-full flex justify-center items-center'>سرویس ها</Link>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
-                    <Link href='post' className='w-full h-full flex justify-center items-center'>نمونه کارها</Link>
+                    <p className='w-full h-full flex justify-center items-center'>نمونه کارها</p>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-gray-200 rounded-lg'>
-                    <p className='w-full h-full flex justify-center items-center'>نظرات</p>
+                    <Link href={post} className='w-full h-full flex justify-center items-center'>نظرات</Link>
                 </li>
             </ul>
         </section>
@@ -90,7 +132,9 @@ function Collapse() {
 //     })
 // }
 
-function Review(){
+function Review(data){
+    console.log(data.data)
+    let count = data.data[0]
     // Document()
     return (
         <div className='flex flex-col items-center bg-gray-950 relative'>
@@ -100,42 +144,42 @@ function Review(){
                         4.3
                         <small className='font-medium text-lg'>/5</small>
                     </h1>
-                    <div className='text-gray-500 mb-5'>2165 نظر</div>
+                    <div className='text-gray-500 mb-5'>{count[5]} نظر</div>
                     <div className="rating-divided">
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 5</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-5' role="progressbar"></div>
                             </div>
-                            <span className="rating-value">1,985</span>
+                            <span className="rating-value">{count[0]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 4</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-4' role="progressbar"></div>
                             </div>
-                            <span className="rating-value">356</span>
+                            <span className="rating-value">{count[1]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 3</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-3' role="progressbar"></div>
                             </div>
-                            <span className="rating-value">130</span>
+                            <span className="rating-value">{count[2]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1' alt=""/> 2</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar" id='star-2' role="progressbar"></div>
                             </div>
-                            <span className="rating-value">90</span>
+                            <span className="rating-value">{count[3]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="/star.png" className='w-5 h-5 ml-1.5' alt=""/> 1</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div className="progress-bar " id='star-1' role="progressbar"></div>
                             </div>
-                            <span className="rating-value">33</span>
+                            <span className="rating-value">{count[4]}</span>
                         </div>
                     </div>
                 </div>

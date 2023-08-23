@@ -40,7 +40,7 @@ export default function createService(req, res) {
                             <select name="category" id="category" className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b'>
                                 {list.map(item => {
                                     return (
-                                        <option value={item[0]}>{item[1]}</option>
+                                        <option value={item.id}>{item.title}</option>
                                     )
                                 })}
                             </select>
@@ -49,7 +49,7 @@ export default function createService(req, res) {
 
                             <input type="text" name='slug' className='w-64 md:w-96 h-10 md:h-12 mb-2 border-0 border-b' placeholder='slug'/>
 
-                            <input type="file" name='first_name' className='w-64 md:w-96 lg:w-96 h-10 md:h-12 mb-6 border-0 border-b border-b-gray-400 text-sm'/>
+                            <input type="file" name='image' className='w-64 md:w-96 lg:w-96 h-10 md:h-12 mb-6 border-0 border-b border-b-gray-400 text-sm'/>
 
                             <input type="submit" className='w-32 h-12 md:w-44 lg:h-14 mb-3 rounded-full border border-gray-700 hover:border-0 hover:bg-gray-700 hover:text-white duration-300' value='ساخت'/>
                         </form>

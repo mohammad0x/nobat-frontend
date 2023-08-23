@@ -15,7 +15,7 @@ export default async function handler(req , res){
 
     const list = []
     for (let cate of y.category){
-        list.push([cate.id, cate.title])
+        list.push(cate)
     }
     console.log(list)
     // return(
