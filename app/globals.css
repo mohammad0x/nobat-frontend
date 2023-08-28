@@ -75,3 +75,7 @@
 .text-2sm {
   font-size: .7rem;
 }
+
+.noneDisplay {
+  display: none;
+}

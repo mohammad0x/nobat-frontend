@@ -3,7 +3,6 @@ import React from "react";
 export default function HeaderHair(data) {
     const create = data.data
     let image = "127.0.0.1:3000" + create.image
-
     return (
         <section className='w p-3 bg-gray-950'>
             <div className='w-full relative mb-4'>
