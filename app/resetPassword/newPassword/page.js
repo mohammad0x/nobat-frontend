@@ -1,7 +1,7 @@
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 
-export default function Email() {
+export default function changePassword() {
     return (
         <html lang="en">
             <head>
