@@ -51,6 +51,7 @@ export default function HairStyle(req , res){
         'comment': y.comment,
     }
     const title = y.title
+
     return (
         <html lang="en">
             <head>
@@ -64,7 +65,11 @@ export default function HairStyle(req , res){
                 <HeaderHair data={create}/>
                 <Collapse data={y.id}/>
                 <div className='mb-80'>
-                    <Review/>
+                    {y.reviews.map(item => {
+                        return(
+                            <Review data={item}/>
+                        )
+                    })}
                 </div>
                 <About data={profile.data}/>
             </body>
@@ -74,18 +79,15 @@ export default function HairStyle(req , res){
     )
 }
 
-function Review(){
-    // const Data = data.data
-    // console.log(Data)
-    // const com =
-    // const w = Data[1]
-    // let f5 = w[0] + '%'
-    // let f4 = w[1] + '%'
-    // let f3 = w[2] + '%'
-    // let f2 = w[3] + '%'
-    // let f1 = w[4] + '%'
-    // let count = Data[0]
-    // const comment = Data[2]
+function Review(data){
+    const w = data.data[1]
+    let f5 = w[0] + '%'
+    let f4 = w[1] + '%'
+    let f3 = w[2] + '%'
+    let f2 = w[3] + '%'
+    let f1 = w[4] + '%'
+    let count = data.data[0]
+    const comment = [data.data[2]]
     const commentaction = '../../commentposts/' + 4
     // Document()
     return (
@@ -96,54 +98,54 @@ function Review(){
                         {/*{count[6]}*/}
                         <small className='font-medium text-lg'>/5</small>
                     </h1>
-                    {/*<div className='text-gray-500 mb-5'>{count[5]} نظر</div>*/}
+                    <div className='text-gray-500 mb-5'>{count[5]} نظر</div>
                     <div className="rating-divided">
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="127.0.0.1:3000/star.png" className='w-5 h-5 ml-1' alt=""/> 5</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
                                 <div
-                                    // style={{width : f5}}
+                                    style={{width : f5}}
                                     className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-5' role="progressbar"></div>
                             </div>
-                            {/*<span className="rating-value">{count[0]}</span>*/}
+                            <span className="rating-value">{count[0]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="127.0.0.1:3000/star.png" className='w-5 h-5 ml-1' alt=""/> 4</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
-                                {/*<div style={{width : f4}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-4' role="progressbar"></div>*/}
+                                <div style={{width : f4}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-4' role="progressbar"></div>
                             </div>
-                            {/*<span className="rating-value">{count[1]}</span>*/}
+                            <span className="rating-value">{count[1]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="127.0.0.1:3000/star.png" className='w-5 h-5 ml-1' alt=""/> 3</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
-                                {/*<div style={{width : f3}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-3' role="progressbar"></div>*/}
+                                <div style={{width : f3}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-3' role="progressbar"></div>
                             </div>
-                            {/*<span className="rating-value">{count[2]}</span>*/}
+                            <span className="rating-value">{count[2]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="127.0.0.1:3000/star.png" className='w-5 h-5 ml-1' alt=""/> 2</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
-                                {/*<div style={{width : f2}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-2' role="progressbar"></div>*/}
+                                <div style={{width : f2}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-2' role="progressbar"></div>
                             </div>
-                            {/*<span className="rating-value">{count[3]}</span>*/}
+                            <span className="rating-value">{count[3]}</span>
                         </div>
                         <div className="rating-progress flex flex-row-reverse items-center">
                             <span className="rating-grade flex"><img src="127.0.0.1:3000/star.png" className='w-5 h-5 ml-1.5' alt=""/> 1</span>
                             <div className="progress mx-2 w-36 md:w-96 h-4 bg-gray-200 rounded-xl">
-                                {/*<div style={{width : f1}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-1' role="progressbar"></div>*/}
+                                <div style={{width : f1}} className="progress-bar bg-yellow-300 h-full rounded-xl" id='star-1' role="progressbar"></div>
                             </div>
-                            {/*<span className="rating-value">{count[4]}</span>*/}
+                            <span className="rating-value">{count[4]}</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='w-screen flex items-center justify-center flex-col'>
-                {/*{comment.map(item => {*/}
-                {/*    return (*/}
-                        <Comments />
-                {/*//     )*/}
-                {/*// })}*/}
+                {comment.map(item => {
+                    return(
+                        <Comments data={item}/>
+                    )
+                })}
             </div>
             <form method='POST' action={commentaction} id='commentForm' className='sticky w-full bottom-0 h-14 md:h-20 bg-gray-100 flex items-center px-3'>
                 <input type="number" name='rate' max='5' min='1' className='w-1/5 md:w-28 h-7 md:h-10 rounded ml-2'/>
@@ -157,26 +159,33 @@ function Review(){
 }
 
 
-function Comments() {
-    // console.log(data.data)
-    // const user = data.data
+function Comments(data) {
+    const user = data.data
     const replyurl = '../../reply/' + 4 + '/' + 1
-
+    const reply = user[4]
+    console.log(user[1])
+    let star = user[1]
+    let unStar = 5 - star
+    let starli = []
+    for(let st in star.count){
+        starli.push(n)
+    }
+    console.log(starli)
     return (
         <div className='w-11/12 md:w-1/2 p-2 rounded-lg shadow shadow-gray-400 flex flex-col justify-between bg-gray-50 mb-5'>
             <div className='p-3 flex justify-between'>
                 <img src="/Landscape-Color.jpg" className='w-16 h-16 rounded-full relative' alt="user-profile"/>
                 <div className='text-right w-5/6 pr-2'>
                     <div className='flex mb-1'>
-                        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
-                        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
-                        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
-                        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
-                        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
+                        {starli.map(item => {
+                            return (
+                                <Star/>
+                            )
+                        })}
                     </div>
-                    {/*<h1 className='text-lg'>{user[2]}</h1>*/}
-                    <p className='text-2sm mb-2 text-gray-700'>1402/4/27</p>
-                    {/*<p className='text-sm mb-2'>{user[0]}</p>*/}
+                    <h1 className='text-lg'>{user[2]}</h1>
+                    <p className='text-2sm mb-2 text-gray-700'>{user[3]}</p>
+                    <p className='text-sm mb-2'>{user[0]}</p>
                     <form method='POST' action={replyurl} id='5' className='w-full bottom-0 h-14 md:h-20 flex items-center px-3'>
                         <input type="text" name='desc' className='w-2/3 md:w-4/5 h-7 md:h-10 rounded' placeholder='نظر خود را وارد کنید ...'/>
                         <input type="submit" value='ثبت نظر'/>
@@ -185,20 +194,37 @@ function Comments() {
                 </div>
             </div>
             <div>
-                <Reply />
+                {reply.map(item => {
+                    return(
+                        <Reply data={item}/>
+                    )
+                })}
             </div>
         </div>
     )
 }
 
-function Reply() {
+function Star(data) {
+    return (
+        <img src="http://127.0.0.1:3000/stargold.png" className='w-6 h-6' alt="star"/>
+    )
+}
+
+function Unstar(data) {
+    return (
+        <img src="/stargold.png" className='w-6 h-6' alt="star"/>
+    )
+}
+
+function Reply(data) {
+    console.log(data.data)
     return (
         <div className='p-3 rounded-lg shadow shadow-gray-400 flex justify-between bg-gray-100 py-4 mt-2'>
             <img src="/Landscape-Color.jpg" className='w-16 h-16 rounded-full' alt="user-profile"/>
             <div className='text-right w-5/6 pr-2'>
-                <h1 className='text-lg'>عرفان کاهانی</h1>
-                <p className='text-2sm mb-2 text-gray-700'>1402/4/27</p>
-                <p className='text-sm mb-2'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.</p>
+                <h1 className='text-lg'>{data.data[2]} {data.data[3]}</h1>
+                <p className='text-2sm mb-2 text-gray-700'>{data.data[1]}</p>
+                <p className='text-sm mb-2'>{data.data[0]}</p>
             </div>
         </div>
     )
