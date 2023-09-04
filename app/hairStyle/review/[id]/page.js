@@ -166,10 +166,8 @@ function Comments(data) {
     console.log(user[1])
     let star = user[1]
     let unStar = 5 - star
-    let starli = []
-    for(let st in star.count){
-        starli.push(n)
-    }
+    let starli = new Array(star).fill(5)
+    let unstarli = new Array(unStar).fill(5)
     console.log(starli)
     return (
         <div className='w-11/12 md:w-1/2 p-2 rounded-lg shadow shadow-gray-400 flex flex-col justify-between bg-gray-50 mb-5'>
@@ -180,6 +178,11 @@ function Comments(data) {
                         {starli.map(item => {
                             return (
                                 <Star/>
+                            )
+                        })}
+                        {unstarli.map(item => {
+                            return (
+                                <UnStar/>
                             )
                         })}
                     </div>

@@ -12,7 +12,7 @@ export default function editCreateService() {
             <title> Document < /title>
         </head>
             <body dir='rtl'>
-                <Back />
+                <Back data='../profile'/>
                 <section className='bg-gray-950 w-screen h-screen flex items-center justify-center'>
                     <div className='w-72 md:w-7/12 w-98 bg-white pt-6 rounded text-center'>
                         <h1 className='text-2xl md:text-3xl mb-4'>ویرایش اکانت</h1>

@@ -1,6 +1,7 @@
 import Footer from "@/app/components/footer/page";
 import Back from "@/app/components/backBtn/page";
 import Link from "next/link";
+import {router} from "next/client";
 
 export default function CategoryService(req, res) {
     const obj =  req.searchParams
@@ -50,7 +51,7 @@ function CategoryServiceCard(data){
     let service = data.data
     let url = '../categoryCreate/' + service.title
     return (
-        <Link href={url} >
+        <Link href='#' >
             <div className='h-64 w-72 mt-5 border border-gray-400 rounded-lg flex p-4 flex-col text-center shadow hover:shadow-lg duration-500'>
                 <img
                     className='rounded-lg w-64 mx-auto mb-4'

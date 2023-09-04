@@ -37,7 +37,7 @@ export default function History(req , res){
                 <title> Document < /title>
             </head>
             <body dir='rtl'>
-                <Back />
+                <Back data='../profile'/>
                 <header className='h-40 bg-gray-950 text-center flex justify-center items-center'>
                     <h1 className='text-white text-2xl'>تاریخچه</h1>
                 </header>

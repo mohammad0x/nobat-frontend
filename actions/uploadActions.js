@@ -11,7 +11,6 @@ async function savePhotoToLocal(formData){
                 const uploadDir = path.join(process.cwd(),"public" , `/${file.name}`)
                 console.log(uploadDir)
                 fs.writeFile(uploadDir , buffer)
-
             })
     ))
 }

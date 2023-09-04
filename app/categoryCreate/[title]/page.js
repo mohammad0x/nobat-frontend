@@ -28,7 +28,7 @@ export default function CategoryService(req, res) {
                 <title> Document < /title>
             </head>
             <body dir='rtl' className='body'>
-            <Back />
+            <Back/>
                 <header className='h-40 bg-gray-950 text-center flex justify-center items-center'>
                     <h1 className='text-white text-2xl'>CategoryService</h1>
                 </header>
@@ -46,8 +46,9 @@ export default function CategoryService(req, res) {
 
 function CategoryCreateCard(data){
     const service = data.data
+    const categoryLink = '../reserve/'+service.id
     return (
-        <Link href=''>
+        <Link href={categoryLink}>
             <div className='h-96 w-72 mt-5 border border-gray-400 rounded-lg flex px-4 py-7 flex-col shadow hover:shadow-lg duration-500'>
                 <img
                     className='rounded-lg w-64 mx-auto mb-4'

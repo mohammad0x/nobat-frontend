@@ -1,5 +1,5 @@
 import React from "react";
-import '../globals.css'
+import '../../globals.css'
 import Link from "next/link";
 import hairStyleCard from "@/app/components/hairStyle";
 
@@ -15,6 +15,11 @@ export default function Profile(req, res) {
         return jsObject
     }
     console.log(y)
+
+    const context = {
+        'id':y.id,
+        'edit':y.edit,
+    }
     return (
         <html lang="en">
             <head>
@@ -27,7 +32,7 @@ export default function Profile(req, res) {
             <body dir='rtl'>
                 <div className='w-screen h-screen bg-gray-950'>
                     <ProfileTop data={y} />
-                    <ProfileBottom/>
+                    <ProfileBottom data={context}/>
                     <ProfileFooter />
                 </div>
             </body>
@@ -38,7 +43,7 @@ export default function Profile(req, res) {
 function ProfileTop(data) {
     const image = 'http://127.0.0.1:3000' + data.data.photo
     return (
-        <section className='bg-gray-950 flex flex-col items-center w-full'>
+        <section className='bg-gray-950 flex flex-col items-center w-full '>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
@@ -53,7 +58,7 @@ function ProfileTop(data) {
 function ProfileBottom(data) {
     return (
         <section className='flex justify-center'>
-            <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-2'>
+            <div className='bg-white rounded-t-3xl md:rounded-3xl  top-52 w-full md:w-2/5 p- pb-6 md:pb-2'>
                 <div className='w-full h-20 flex justify-around items-center'>
                     <Link href="../delete_user" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
                         delete</Link>
@@ -64,12 +69,50 @@ function ProfileBottom(data) {
                         temp
                     </Link>
                 </div>
+                <HairStyleCard data={data.data}/>
                 <CustomerCard />
                 <div className='w-full h-11 text-right border-t-4 border-gray-400 px-3'>
                     <h3 className='text-lg text-red-500 border-gray-200 py-2'>خروج</h3>
                 </div>
             </div>
         </section>
+    )
+}
+
+function HairStyleCard(data) {
+    const hairStyleLink = '../hairStyle/service/'+ data.data
+    return (
+        <div className='w-full text-right border-t-4 border-gray-400 px-3'>
+            <div className='flex justify-between items-center py-2 border-b border-gray-200'>
+                <h3 className='text-lg'>سرویس های من</h3>
+                <Link href="../myService">
+                    <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+                </Link>
+            </div>
+            <AddCreateService />
+        </div>
+    )
+}
+
+function AddCreateService() {
+    return (
+        <div className='flex justify-between items-center py-2 border-b border-gray-200'>
+            <h3 className='text-lg'>ساخت اکانت</h3>
+            <Link href='../createService'>
+                <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+            </Link>
+        </div>
+    )
+}
+
+function CreateService() {
+    return (
+        <div className='flex justify-between items-center py-2 border-b border-gray-200'>
+            <h3 className='text-lg'>مشاهده اکانت</h3>
+            <a href={hairStyleLink}>
+                <img className='w-8 h-7' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVR4nO3Z0QnDMBAE0alCMm4xKdfEcTXJj9TD3jGvg2UObBBIklTPAbxoMOIGfsCboiZwrRFf4KSg6YgQlkhhiRSWSGGJFNMvdojZocQAPmvEvX7NSxpdhuwx+7Seqqe1OSbV8MxCDcuEGpYJZZlUlknVqszR4Vmh1UOPJIk2/sdBW38dJ6R0AAAAAElFTkSuQmCC" alt=''/>
+            </a>
+        </div>
     )
 }
 
