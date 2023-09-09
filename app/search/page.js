@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HairStyle from '../components/hairStyle'
 import Footer from "@/app/components/footer/page";

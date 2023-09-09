@@ -1,3 +1,4 @@
+"use client";
 import Back from "@/app/components/backBtn/page";
 import React from "react";
 
@@ -14,7 +15,6 @@ export default function EditProfile(req, res) {
     }
 
 
-    console.log(y)
     return (
         <html lang="en">
             <head>

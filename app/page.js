@@ -1,11 +1,9 @@
+"use client";
 import './globals.css';
-import axios from "axios";
-import React from "react";
 import Header from "@/app/components/header/page";
 import HairStyle from "@/app/components/hairStyle";
 import Footer from "@/app/components/footer/page";
-
-export default async function Home(req , res){
+export default function Home(req , res){
     const obj =  req.searchParams
     let y = getDate(obj)
 
@@ -34,7 +32,7 @@ export default async function Home(req , res){
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
                 <title>نوبت</title>
             </head>
-            <body dir='rtl' className='footerBody'>
+            <body dir='rtl'>
                 <Header data={category}/>
                 <section className='py-6 px-3 h-4/6 md:h-4/6 lg:h-3/5 sm:px-8'>
                     <div className='relative'>
@@ -61,7 +59,7 @@ export default async function Home(req , res){
                         })}
                     </div>
                 </section>
-                <Footer title = 'home' />
+                <Footer/>
             </body>
         </html>
     )

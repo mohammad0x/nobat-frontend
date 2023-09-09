@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default function Header(data) {
     let list = data.data
-    console.log(list)
     return (
         <header className='bg-gray-950 h-4/6 md:h-4/6 lg:h-3/5 text-center pt-14'>
             <h1 className='text-6xl  text-white font-sans'>Nobat</h1>

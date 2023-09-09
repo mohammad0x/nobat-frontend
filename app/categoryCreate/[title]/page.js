@@ -1,11 +1,10 @@
-import Footer from "@/app/components/footer/page";
+"use client";
 import Back from "@/app/components/backBtn/page";
 import Link from "next/link";
 
 export default function CategoryService(req, res) {
     const obj =  req.searchParams
     let y = getDate(obj)
-    console.log(y)
 
     function getDate(obj){
         for(let profile in obj ){

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import '../../globals.css'
 import Link from "next/link";
@@ -48,7 +49,7 @@ function ProfileTop(data) {
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
                     <img src={image} alt="profileImage" className='w-28 h-28 rounded-full'/>
-                    <Link href='edit/' className='w-11 h-11 rounded-full bg-red-700 absolute -bottom-3.5 -left-0.5'></Link>
+                    <Link href='profile/edit' className='w-11 h-11 rounded-full bg-red-700 absolute -bottom-3.5 -left-0.5'></Link>
                 </div>
             </div>
         </section>

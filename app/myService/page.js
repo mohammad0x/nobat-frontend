@@ -1,4 +1,4 @@
-import Footer from "@/app/components/footer/page";
+"use client";
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 import Link from "next/link";

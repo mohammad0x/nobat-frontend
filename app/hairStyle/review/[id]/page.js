@@ -51,7 +51,6 @@ export default function HairStyle(req , res){
         'comment': y.comment,
     }
     const title = y.title
-
     return (
         <html lang="en">
             <head>
@@ -65,11 +64,7 @@ export default function HairStyle(req , res){
                 <HeaderHair data={create}/>
                 <Collapse data={y.id}/>
                 <div className='mb-80'>
-                    {y.reviews.map(item => {
-                        return(
-                            <Review data={item}/>
-                        )
-                    })}
+                    <Review data={y.reviews}/>
                 </div>
                 <About data={profile.data}/>
             </body>
@@ -80,6 +75,7 @@ export default function HairStyle(req , res){
 }
 
 function Review(data){
+    console.log(data.data)
     const w = data.data[1]
     let f5 = w[0] + '%'
     let f4 = w[1] + '%'
@@ -87,15 +83,18 @@ function Review(data){
     let f2 = w[3] + '%'
     let f1 = w[4] + '%'
     let count = data.data[0]
-    const comment = [data.data[2]]
+    const comment = data.data[2]
     const commentaction = '../../commentposts/' + 4
-    // Document()
+    console.log('review')
+    console.log(data.data)
+    console.log('review1')
+    console.log(comment)
     return (
         <div className='flex flex-col items-center bg-gray-950 relative'>
             <div className="rating-card flex justify-center items-center w-full">
                 <div className="text-center flex flex-col items-center m-b-5 py-6 w-5/6 text-gray-200">
                     <h1 className='text-4xl font-bold mb-3'>
-                        {/*{count[6]}*/}
+                        {count[6]}
                         <small className='font-medium text-lg'>/5</small>
                     </h1>
                     <div className='text-gray-500 mb-5'>{count[5]} نظر</div>
@@ -163,12 +162,12 @@ function Comments(data) {
     const user = data.data
     const replyurl = '../../reply/' + 4 + '/' + 1
     const reply = user[4]
-    console.log(user[1])
+    console.log('comments')
+    console.log(user)
     let star = user[1]
     let unStar = 5 - star
     let starli = new Array(star).fill(5)
     let unstarli = new Array(unStar).fill(5)
-    console.log(starli)
     return (
         <div className='w-11/12 md:w-1/2 p-2 rounded-lg shadow shadow-gray-400 flex flex-col justify-between bg-gray-50 mb-5'>
             <div className='p-3 flex justify-between'>
@@ -182,7 +181,7 @@ function Comments(data) {
                         })}
                         {unstarli.map(item => {
                             return (
-                                <UnStar/>
+                                <Unstar/>
                             )
                         })}
                     </div>
@@ -244,10 +243,10 @@ function Collapse(data) {
                     <Link href={service} className='w-full h-full flex justify-center items-center'>سرویس ها</Link>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-white rounded-lg'>
-                    <p className='w-full h-full flex justify-center items-center'>نمونه کارها</p>
+                    <Link href={post} className='w-full h-full flex justify-center items-center'>نمونه کارها</Link>
                 </li>
                 <li className='w-24 md:w-52 w-92 h-full bg-gray-200 rounded-lg'>
-                    <Link href={post} className='w-full h-full flex justify-center items-center'>نظرات</Link>
+                    <p className='w-full h-full flex justify-center items-center'>نظرات</p>
                 </li>
             </ul>
         </section>

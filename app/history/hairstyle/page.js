@@ -1,3 +1,4 @@
+"use client";
 import Back from "@/app/components/backBtn/page";
 
 export default function History(req , res){
