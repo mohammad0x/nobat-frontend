@@ -75,7 +75,6 @@ export default function HairStyle(req , res){
 }
 
 function Review(data){
-    console.log(data.data)
     const w = data.data[1]
     let f5 = w[0] + '%'
     let f4 = w[1] + '%'
@@ -85,10 +84,6 @@ function Review(data){
     let count = data.data[0]
     const comment = data.data[2]
     const commentaction = '../../commentposts/' + 4
-    console.log('review')
-    console.log(data.data)
-    console.log('review1')
-    console.log(comment)
     return (
         <div className='flex flex-col items-center bg-gray-950 relative'>
             <div className="rating-card flex justify-center items-center w-full">
@@ -150,7 +145,7 @@ function Review(data){
                 <input type="number" name='rate' max='5' min='1' className='w-1/5 md:w-28 h-7 md:h-10 rounded ml-2'/>
                 <input type="text" name='desc' className='w-2/3 md:w-4/5 h-7 md:h-10 rounded' placeholder='نظر خود را وارد کنید ...'/>
 
-                <input type="submit" value='ثبت نظر'/>
+                <input type="submit" value='ثبت نظر' className='w-32 h-7 md:h-10 ms-2 border border-gray-400 rounded'/>
                 {/*  send icon  */}
             </form>
         </div>
@@ -170,10 +165,9 @@ function Comments(data) {
     let unstarli = new Array(unStar).fill(5)
     return (
         <div className='w-11/12 md:w-1/2 p-2 rounded-lg shadow shadow-gray-400 flex flex-col justify-between bg-gray-50 mb-5'>
-            <div className='p-3 flex justify-between'>
-                <img src="/Landscape-Color.jpg" className='w-16 h-16 rounded-full relative' alt="user-profile"/>
-                <div className='text-right w-5/6 pr-2'>
-                    <div className='flex mb-1'>
+            <div className='p-3 pt-2 flex flex-col justify-between'>
+                <div>
+                    <div className='flex mb-4'>
                         {starli.map(item => {
                             return (
                                 <Star/>
@@ -185,15 +179,20 @@ function Comments(data) {
                             )
                         })}
                     </div>
-                    <h1 className='text-lg'>{user[2]}</h1>
-                    <p className='text-2sm mb-2 text-gray-700'>{user[3]}</p>
-                    <p className='text-sm mb-2'>{user[0]}</p>
-                    <form method='POST' action={replyurl} id='5' className='w-full bottom-0 h-14 md:h-20 flex items-center px-3'>
-                        <input type="text" name='desc' className='w-2/3 md:w-4/5 h-7 md:h-10 rounded' placeholder='نظر خود را وارد کنید ...'/>
-                        <input type="submit" value='ثبت نظر'/>
-                        {/*  send icon  */}
-                    </form>
+                    <div className='flex items-center'>
+                        <img src="/Landscape-Color.jpg" className='w-16 h-16 border rounded-full relative' alt="user-profile"/>
+                        <h1 className='text-lg ms-2'>{user[2]}</h1>
+                    </div>
+                    <div className='text-right w-5/6 pr-4 mt-1'>
+                        <p className='text-2sm mb-2 text-gray-700'>{user[3]}</p>
+                        <p className='text-sm mb-2'>{user[0]}</p>
+                    </div>
                 </div>
+                <form method='POST' action={replyurl} id='5' className='w-full bottom-0 h-14 md:h-20 flex items-center px-3'>
+                    <input type="text" name='desc' className='w-44 md:text-sm md:w-4/5 h-7 md:h-10 rounded' placeholder='نظر خود را وارد کنید ...'/>
+                    <input type="submit" value='ثبت پاسخ' className='w-32 h-7 md:h-10 ms-2 border border-gray-400 rounded'/>
+                    {/*  send icon  */}
+                </form>
             </div>
             <div>
                 {reply.map(item => {

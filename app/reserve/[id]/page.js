@@ -15,6 +15,7 @@ export default function Reserve({params}) {
                         <h1 className='text-3xl md:text-4xl'>رزرو</h1>
                         <form method="POST" className='flex flex-col sm:mt-8 items-center md:w-6/12 lg:w-1/2'>
                             <input type="date" name='date' className='w-64 h-10 md:w-11/12 md:h-11 rounded mb-5 shadow focus:shadow-lg'/>
+                            <input type="number" name='number' placeholder='تعداد' defaultValue='1' className='w-64 h-10 md:w-11/12 md:h-11 rounded mb-5 shadow focus::shadow-lg'/>
                             <input type="time" name='time' className='w-64 h-10 md:w-11/12 md:h-11 rounded mb-5 shadow focus::shadow-lg'/>
                             <input type="submit" value="رزرو" className='w-48 h-14 md:w-7/12 md:h-16 border border-gray-400 rounded mt-3 shadow hover:shadow-lg duration-500'/>
                         </form>

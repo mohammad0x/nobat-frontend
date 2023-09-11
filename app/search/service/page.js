@@ -1,7 +1,23 @@
-import React from "react";
+"use client"
 import HairStyle from '../../components/hairStyle'
 import Footer from "@/app/components/footer/page";
-export default function Search() {
+export default function Search(req , res){
+    console.log('==========================================================================')
+    console.log(req.searchParams)
+    const obj =  req.searchParams
+    let y = getDate(obj)
+    // let newService = y.CreateServiceNew
+    // let scoreService = y.CreateServiceScore
+
+    function getDate(obj){
+        for(let profile in obj ){
+            var jsObject =  JSON.parse(profile);
+        }
+        return jsObject
+    }
+
+    console.log('==========================================================================')
+    console.log(y)
     return (
         <html lang = "en" >
             <head>
@@ -16,14 +32,14 @@ export default function Search() {
                 </header>
                 <section className='px-8 py-6'>
                     <h1 className='text-3xl font-bold'>Service</h1>
-                    <HairStyle />
+                    {/*<HairStyle />*/}
                 </section>
                 <div className="w-full border-t pb-3 bt-3"></div>
                 <section className='px-8 py-6'>
                     <h1 className='text-3xl font-bold'>پیشنهاد برای شما</h1>
-                    <HairStyle />
+                    {/*<HairStyle />*/}
                 </section>
-                <Footer title='search'/>
+                <Footer/>
             </body>
         </html>
     )

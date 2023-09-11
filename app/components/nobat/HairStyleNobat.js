@@ -8,13 +8,13 @@ export default function Customer(data) {
     const profile = data.data[2]
     return (
         <div className='w-full bg-white shadow-lg rounded-lg py-4 px-5 border'>
-            <div className='flex text-xl text-center justify-between'>
-                <h2 className='text-3xl'>{service.title}</h2>
-                <p>{service.price} تومان</p>
+            <div className='flex text-center justify-between'>
+                <h2 className='text-2xl'>{service.title}</h2>
+                <p className='text-lg mt-1'>{service.price} تومان</p>
             </div>
             <h1 className='text-lg mt-1'>{profile.first_name} {profile.last_name}</h1>
             <p className='mt-2'>شماره: {profile.phone}</p>
-            <div className='flex mt-2 text-lg'>
+            <div className='flex mt-2'>
                 <p>{reserve.time}</p>
                 <p className='ms-2'>{reserve.date}</p>
             </div>

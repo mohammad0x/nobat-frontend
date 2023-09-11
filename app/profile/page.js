@@ -40,7 +40,7 @@ function ProfileTop(data) {
     const image = 'http://127.0.0.1:3000' + data.data.photo
     return (
         <section className='bg-gray-950 flex flex-col items-center w-full'>
-            <h1 className='text-white mt-3 text-2xl'>Profile</h1>
+            <h1 className='text-white mt-10 text-2xl'>Profile</h1>
             <div className='w-72 h-40 flex mt-6 flex-col items-center'>
                 <div className='relative'>
                     <img src={image} alt="profileImage" className='w-28 h-28 rounded-full'/>
@@ -54,7 +54,7 @@ function ProfileTop(data) {
 function ProfileBottom(data) {
     return (
         <section className='flex justify-center'>
-            <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-52 w-full md:w-2/5 pb-6 md:pb-2'>
+            <div className='bg-white rounded-t-3xl md:rounded-3xl absolute top-60 mt-4 w-full md:w-2/5 pb-6 md:pb-2'>
                 <div className='w-full h-20 flex justify-around items-center'>
                     <Link href="../delete_user" className='w-16 h-16 shadow border border-red-300 text-red-600 hover:bg-red-500 hover:text-white hover:border-white duration-500 rounded flex items-center justify-around'>
                         delete</Link>

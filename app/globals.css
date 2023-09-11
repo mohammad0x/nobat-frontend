@@ -1,77 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .mb-15 {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .h-18 {
-  height: 4.5rem;
+    height: 4.5rem;
 }
 
 .w-18 {
-  width: 4.5rem;
+    width: 4.5rem;
 }
 
 .bg-transparent-gray {
-  background: rgba(75, 75, 75, 0.7);
+    background: rgba(75, 75, 75, 0.7);
 }
 
 .fontw {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .position {
-  top: -20px;
-  left: -25px;
+    top: -20px;
+    left: -25px;
 }
 
 .box-shadow {
-  box-shadow: 0 2px 3px 2px rgba(1, 1, 1, 0.16);
+    box-shadow: 0 2px 3px 2px rgba(1, 1, 1, 0.16);
 }
 
 .search-border {
-  border: 1px solid #4b4b4b;
-  background-image: url("/search.png");
-  background-repeat: no-repeat;
-  background-size: 25px;
-  background-position: 9px ;
-
+    border: 1px solid #4b4b4b;
+    background-image: url("/search.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 9px;
 }
 
 .font-size {
-  font-size: .8rem;
+    font-size: .8rem;
 }
 
 .height {
-  height: 20rem;
+    height: 20rem;
 }
 
 .h-100 {
-  height: 38.5rem;
+    height: 38.5rem;
 }
 
 @media (min-width: 1440px) {
-  .h-100 {
-    height: 40.1rem !important;
-  }
+    .h-100 {
+        height: 40.1rem !important;
+    }
 
-  .w-92 {
-    width: 26rem !important;
-  }
+    .w-92 {
+        width: 26rem !important;
+    }
 }
 
 @media (min-width: 1024px) {
-  .w-98 {
-    width: 28rem !important;
-  }
+    .w-98 {
+        width: 28rem !important;
+        background: grad;
+    }
 }
 
 .text-2sm {
-  font-size: .7rem;
-}
-
-.noneDisplay {
-  display: none;
+    font-size: .7rem;
 }

@@ -15,19 +15,19 @@ export default function History(req , res){
         return jsObject
     }
 
-    const list = []
-    for (let cate of reserve){
-        for (let ser of service){
-            if (ser.id === cate.service_id) {
-                for (let create of createService){
-                    if (create.id === ser.user_id){
-                        list.push([cate, ser, create])
-                    }
-                }
-            }
-        }
-    }
-
+    // const list = []
+    // for (let cate of reserve){
+    //     for (let ser of service){
+    //         if (ser.id === cate.service_id) {
+    //             for (let create of createService){
+    //                 if (create.id === ser.user_id){
+    //                     list.push([cate, ser, create])
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    let list = y.data
     return (
         <html lang="en">
             <head>
@@ -60,12 +60,12 @@ function Customer(data) {
     const create = data.data[2]
 
     return (
-        <div className='w-72 h-72 border border-gray-400 rounded-lg px-3 py-3'>
+        <div className='w-72 border border-gray-400 rounded-lg px-3 py-3'>
             <img className='w-72 h-40' src={create.image.url} alt="Hairstyle-image"/>
             <h1 className='text-2xl mt-2'>{create.title}</h1>
             <div className='flex mt-2 items-center justify-between'>
-                <h2 className='text-xl'>{service.title}</h2>
-                <h3 className='text-lg'>{service.price} تومان</h3>
+                <h2 className='text-lg'>{service.title}</h2>
+                <h3 className='mt-1'>{service.price} تومان</h3>
             </div>
             <h3 className='mt-1 text-sm'>{reserve.date} {reserve.time}</h3>
         </div>

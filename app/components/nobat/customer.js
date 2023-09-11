@@ -11,11 +11,11 @@ export default function Customer(data) {
             <div className='w-full  bg-white shadow-lg rounded-lg py-4 px-5 border'>
                 <h1 className='text-2xl'>{create.title}</h1>
                 <div className='flex mt-2 text-lg text-center justify-between'>
-                    <h2 className='text-xl'>{service.title}</h2>
+                    <h2>{service.title}</h2>
                     <p>{service.price} تومان</p>
                 </div>
                 <p className='mt-2'>{create.address}</p>
-                <div className='flex mt-2 text-lg'>
+                <div className='flex mt-2 text-'>
                     <p>{reserve.time}</p>
                     <p className='ms-2'>{reserve.date}</p>
                 </div>
