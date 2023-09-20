@@ -70,3 +70,97 @@
 .text-2sm {
     font-size: .7rem;
 }
+
+/* carousel style */
+
+/* Width of carousel */
+#window, #slide-container {
+    width: 400px;
+}
+
+/* Height of carousel */
+#slide-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    min-height: 200px;
+}
+
+.slides {
+    display: block;
+}
+
+/* Style of arrows */
+.arrow {
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    padding: 16px;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    background-color: var(--transparent-grey);
+}
+
+#next {
+    left: 100%;
+    transform: translate(-100%, -50%);
+    border-radius: 4px 0px 0px 4px;
+}
+
+#previous {
+    border-radius: 0px 4px 4px 0px;
+}
+
+#text-bar {
+    background-color: var(--transparent-grey);
+    width: 100%;
+    height: 36px;
+    position: absolute;
+    top: 100%;
+    transform: translate(0%, -100%);
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+}
+
+#place {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+#dotsContainer {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+
+.dots {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 100%;
+    display: inline-block;
+    margin: 8px 2px;
+}
+
+.dots:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.activeDot {
+    background-color: rgba(0,0,0,0.6);
+}
