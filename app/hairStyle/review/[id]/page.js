@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect} from 'react'
+import React from 'react'
 import HeaderHair from "@/app/hairStyle/header";
 import Link from "next/link";
 import About from "@/app/hairStyle/about";
@@ -8,8 +8,8 @@ import {list} from "postcss";
 // export default function xx(req , res){
 //     const obj =  req.searchParams
 //     // console.log(req)
-//     let y = getDate(obj)
-//     console.log(y)
+//     let data = getDate(obj)
+//     console.log(data)
 //
 //     function getDate(obj){
 //         for(let profile in obj ){
@@ -23,7 +23,7 @@ import {list} from "postcss";
 export default function HairStyle(req , res){
     const obj =  req.searchParams
     // console.log(req)
-    let y = getDate(obj)
+    let data = getDate(obj)
 
     function getDate(obj){
         for(let profile in obj ){
@@ -32,25 +32,26 @@ export default function HairStyle(req , res){
         return jsObject
     }
     const profile = {}
-    for (let cate of y.profile){
+    for (let cate of data.profile){
         profile.data = {
             'address':cate.address,
             'city':cate.city,
             'phone':cate.phone,
             'first_name':cate.first_name,
             'last_name':cate.last_name,
-            'slug': y.slug,
+            'slug': data.slug,
         }
     }
 
     const create = {
-        'title': y.title,
-        'slug': y.slug,
-        'image': y.image,
-        'score': y.score,
-        'comment': y.comment,
+        'title': data.title,
+        'slug': data.slug,
+        'image': data.image,
+        'score': data.score,
+        'comment': data.comment,
+        'score':data.score,
     }
-    const title = y.title
+    const title = data.title
     return (
         <html lang="en">
             <head>
@@ -62,9 +63,9 @@ export default function HairStyle(req , res){
             </head>
             <body dir='rtl'>
                 <HeaderHair data={create}/>
-                <Collapse data={y.id}/>
+                <Collapse data={data.id}/>
                 <div className='mb-80'>
-                    <Review data={y.reviews}/>
+                    <Review data={data.reviews}/>
                 </div>
                 <About data={profile.data}/>
             </body>
@@ -82,6 +83,7 @@ function Review(data){
     let f2 = w[3] + '%'
     let f1 = w[4] + '%'
     let count = data.data[0]
+    console.log(count[6])
     const comment = data.data[2]
     const commentaction = '../../commentposts/' + 4
     return (

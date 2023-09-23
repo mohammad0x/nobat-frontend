@@ -1,9 +1,17 @@
-import Footer from "@/app/components/footer/page";
+'use client'
 import React from "react";
 import HeaderHair from "@/app/hairStyle/header";
 import Link from "next/link";
+// Import Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+// end import swiper
 import About from "@/app/hairStyle/about";
+import "@/app/globals.css";
 
+// import required modules
 export default function Service(req , res){
     const obj =  req.searchParams
     let y = getDate(obj)
@@ -44,13 +52,15 @@ export default function Service(req , res){
             <body dir='rtl'>
                 <HeaderHair data={create}/>
                 <Collapse data={y.id}/>
-                <div className='flex items-center flex-col bg-gray-950 py-6 mb-80'>
+                <Swiper pagination={{dynamicBullets: true,}} modules={[Pagination]} className="bg-gray-950 flex items-center justify-center mb-80">
                     {y.service.map(item => {
                         return(
-                            <ServiceCard data={item}/>
+                            <SwiperSlide className='w-screen swiper-slide items-center justify-center py-6 px-10 flex'>
+                                <ServiceCard data={item}/>
+                            </SwiperSlide>
                         )
                     })}
-                </div>
+                </Swiper>
                 <About data={profile.data}/>
             </body>
         </html>

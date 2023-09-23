@@ -1,5 +1,3 @@
-import createService from "@/app/createService/page";
-import {create} from "axios";
 import Link from "next/link";
 
 export default function hairStyleCard(data) {
@@ -7,7 +5,7 @@ export default function hairStyleCard(data) {
     const hairStyleLink = 'hairStyle/service/'+createService.id
     let img = 'http://127.0.0.1:3000/' + createService.image
     return (
-        <Link href={hairStyleLink} className='border1 w-80 px-3'>
+        <Link href={hairStyleLink} className='border1 w-64 md:w-80 md:px-3 '>
             <div className='relative w-72'>
                 <img className='bg-cover rounded-2xl w-full h-44' src={img} alt='hairStyleImage'/>
                 <div className='text-center w-36 bg-transparent-gray absolute h-20 top-0 rounded-bl-2xl rounded-tr-2xl'>

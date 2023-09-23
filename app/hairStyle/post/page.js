@@ -2,8 +2,14 @@
 import React from "react";
 import Link from "next/link";
 import HeaderHair from "@/app/hairStyle/header";
+// Import Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+// end import swiper
 import About from "@/app/hairStyle/about";
-
+import "@/app/globals.css";
 export default function Post(req , res){
     const obj =  req.searchParams
     let y = getDate(obj)
@@ -45,13 +51,15 @@ export default function Post(req , res){
             <body dir='rtl'>
                 <HeaderHair data={create}/>
                 <Collapse data={y.id}/>
-                <div className='flex items-center flex-col bg-gray-950 py-6 mb-80'>
+                <Swiper pagination={{dynamicBullets: true,}} modules={[Pagination]} className="bg-gray-950 flex items-center justify-center mb-80">
                     {y.post.map(item => {
                         return(
-                            <Posts data={item}/>
+                            <SwiperSlide className='w-screen swiper-slide items-center justify-center py-6 px-10 flex'>
+                                <Posts data={item}/>
+                            </SwiperSlide>
                         )
                     })}
-                </div>
+                </Swiper>
                 <About data={profile}/>
             </body>
         </html>

@@ -63,7 +63,7 @@
 @media (min-width: 1024px) {
     .w-98 {
         width: 28rem !important;
-        background: grad;
+        background: gray;
     }
 }
 
@@ -164,3 +164,20 @@
 .activeDot {
     background-color: rgba(0,0,0,0.6);
 }
+
+.w-1-4{
+    width: 22.5rem !important;
+}
+
+
+.w-20rem{
+    width: 18rem !important;
+}
+
+.w-6rem {
+    width: 8rem !important;
+}
+
+/*@media (max-width: ) {*/
+/*    */
+/*}*/
