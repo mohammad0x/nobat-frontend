@@ -4,31 +4,32 @@ import React from "react";
 import '@/app/globals.css'
 
 export default function Nobat(req, res) {
-    const obj =  req.searchParams
-    let y = getDate(obj)
-    const reserve = y.reserve
-    const service = y.service
-    const profile = y.profilee
+    const object =  req.searchParams
+    let data = getDate(object)
+    const reserve = data.reserve
+    const service = data.service
+    const profile = data.profile
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const list = []
-    for (let cate of reserve){
+    for (let res of reserve){
         for (let ser of service){
-            if (ser.id === cate.service_id) {
+            if (ser.id === res.service_id) {
                 for (let pro of profile){
-                    if (pro.user_id === cate.user_id) {
-                        list.push([cate, ser, pro])
+                    if (pro.user_id === res.user_id) {
+                        list.push([res, ser, pro])
                     }
                 }
             }
         }
     }
+
     return (
         <html lang = "en">
             <head>

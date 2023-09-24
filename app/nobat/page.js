@@ -4,26 +4,26 @@ import React from "react";
 import HairStyleNobat from "@/app/components/nobat/HairStyleNobat";
 
 export default function Nobat(req, res) {
-    const obj =  req.searchParams
-    let y = getDate(obj)
-    const reserve = y.reserve
-    const service = y.service
-    const createService = y.createService
+    const object =  req.searchParams
+    let data = getDate(object)
+    const reserve = data.reserve
+    const service = data.service
+    const createService = data.createService
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const list = []
-    for (let cate of reserve){
+    for (let res of reserve){
         for (let ser of service){
-            if (ser.id === cate.service_id) {
+            if (ser.id === res.service_id) {
                 for (let create of createService){
                     if (create.user_id === ser.user_id){
-                        list.push([cate, ser, create])
+                        list.push([res, ser, create])
                     }
                 }
             }

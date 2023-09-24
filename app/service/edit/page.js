@@ -2,21 +2,21 @@ import React from "react";
 import Back from "@/app/components/backBtn/page";
 
 export default function NewService(req , res){
-    const obj =  req.searchParams
-    let y = getDate(obj)
+    const object =  req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj){
-        for(let profile in obj){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const list = []
-    for (let cate of y.category){
+    for (let cate of data.category){
         list.push(cate)
     }
-    console.log(list)
+
     return (
         <html lang="en">
             <head>
@@ -40,11 +40,11 @@ export default function NewService(req , res){
                                 })}
                             </select>
 
-                            <input type="text" name='title' defaultValue={y.category.title} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='title'/>
+                            <input type="text" name='title' defaultValue={data.category.title} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='title'/>
 
-                            <input type="number" name='price' defaultValue={y.category.price} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='قیمت'/>
+                            <input type="number" name='price' defaultValue={data.category.price} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='قیمت'/>
 
-                            <input type="text" name='desc' defaultValue={y.category.desc} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='توضیحات'/>
+                            <input type="text" name='desc' defaultValue={data.category.desc} className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b' placeholder='توضیحات'/>
 
                             <div className='flex justify-around w-1/2 mt-3 mb-3'>
                                 <label htmlFor="True">فعال</label>

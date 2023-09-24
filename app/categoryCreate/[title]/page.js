@@ -3,18 +3,18 @@ import Back from "@/app/components/backBtn/page";
 import Link from "next/link";
 
 export default function CategoryService(req, res) {
-    const obj =  req.searchParams
-    let y = getDate(obj)
+    const object =  req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object ){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const list = []
-    for (let cate of y.service){
+    for (let cate of data.service){
         list.push(cate)
     }
     return (

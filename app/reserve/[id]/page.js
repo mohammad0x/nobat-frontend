@@ -1,5 +1,4 @@
 export default function Reserve({params}) {
-    console.log(params)
     return (
         <html lang="en">
             <head>

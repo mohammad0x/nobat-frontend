@@ -13,32 +13,32 @@ import "@/app/globals.css";
 
 // import required modules
 export default function Service(req , res){
-    const obj =  req.searchParams
-    let y = getDate(obj)
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    const object =  req.searchParams
+    let data = getDate(object)
+    function getDate(object){
+        for(let obj in object ){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const profile = {}
-    for (let cate of y.profile){
+    for (let obj of data.profile){
         profile.data = {
-            'address':cate.address,
-            'city':cate.city,
-            'phone':cate.phone,
-            'first_name':cate.first_name,
-            'last_name':cate.last_name,
-            'slug': y.slug
+            'address':obj.address,
+            'city':obj.city,
+            'phone':obj.phone,
+            'first_name':obj.first_name,
+            'last_name':obj.last_name,
+            'slug': data.slug
         }
     }
     const create = {
-        'title': y.title,
-        'slug': y.slug,
-        'image': y.image,
-        'score': y.score,
-        'comment': y.comment,
+        'title': data.title,
+        'slug': data.slug,
+        'image': data.image,
+        'score': data.score,
+        'comment': data.comment,
     }
     return (
         <html lang="en">
@@ -51,7 +51,7 @@ export default function Service(req , res){
             </head>
             <body dir='rtl'>
                 <HeaderHair data={create}/>
-                <Collapse data={y.id}/>
+                <Collapse data={data.id}/>
                 <Swiper pagination={{dynamicBullets: true,}} modules={[Pagination]} className="bg-gray-950 flex items-center justify-center mb-80">
                     {y.service.map(item => {
                         return(

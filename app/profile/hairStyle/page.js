@@ -5,17 +5,15 @@ import Link from "next/link";
 import hairStyleCard from "@/app/components/hairStyle";
 
 export default function Profile(req, res) {
-    console.log(req)
-    const obj =  req.searchParams
-    let y = getDate(obj)
+    const object =  req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj){
-        for(let profile in obj){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
-    console.log(y)
 
     return (
         <html lang="en">
@@ -28,8 +26,8 @@ export default function Profile(req, res) {
             </head>
             <body dir='rtl'>
                 <div className='w-screen h-screen bg-gray-950'>
-                    <ProfileTop data={y} />
-                    <ProfileBottom data={y.createServiceId}/>
+                    <ProfileTop data={data} />
+                    <ProfileBottom data={data.createServiceId}/>
                     <ProfileFooter />
                 </div>
             </body>

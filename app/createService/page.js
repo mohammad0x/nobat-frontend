@@ -1,26 +1,21 @@
 import React from "react";
 import Back from "@/app/components/backBtn/page";
-import {options} from "axios";
-import {list} from "postcss";
 
 export default function createService(req, res) {
-    const obj =  req.searchParams
-    let y = getDate(obj)
+    const object =  req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object ){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
 
     const list = []
-    for (let cate of y.category){
-        list.push([cate.id, cate.title])
+    for (let obj of data.category){
+        list.push([obj.id, obj.title])
     }
-    // console.log(list)
-    // console.log(y)
-
 
     return (
         <html lang="en">

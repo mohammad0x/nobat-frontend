@@ -2,32 +2,20 @@
 import Back from "@/app/components/backBtn/page";
 
 export default function History(req , res){
-    const obj =  req.searchParams
-    let y = getDate(obj)
-    let reserve = y.reserve
-    let service = y.service
-    let createService = y.createService
+    const object =  req.searchParams
+    let data = getDate(object)
+    let reserve = data.reserve
+    let service = data.service
+    let createService = data.createService
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object ){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
+    let list = data.data
 
-    // const list = []
-    // for (let cate of reserve){
-    //     for (let ser of service){
-    //         if (ser.id === cate.service_id) {
-    //             for (let create of createService){
-    //                 if (create.id === ser.user_id){
-    //                     list.push([cate, ser, create])
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    let list = y.data
     return (
         <html lang="en">
             <head>

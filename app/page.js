@@ -12,28 +12,26 @@ import Footer from "@/app/components/footer/page";
 
 
 export default function Home(req, res) {
-    const obj = req.searchParams
-    let y = getDate(obj)
+    const object = req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj) {
-        for (let profile in obj) {
-            var jsObject = JSON.parse(profile);
+    function getDate(object) {
+        for (let obj in object) {
+            var jsObject = JSON.parse(object);
         }
         return jsObject
     }
 
     const category = []
-    for (let cate of y.category) {
+    for (let cate of data.category) {
         category.push(cate)
     }
 
     const create = []
-    for (let cate of y.Create_Service) {
+    for (let cate of data.Create_Service) {
         create.push(cate)
     }
 
-
-    let index;
     return (
         <html>
             <head>
@@ -79,4 +77,3 @@ export default function Home(req, res) {
         </html>
     )
 }
-

@@ -3,42 +3,26 @@ import React from 'react'
 import HeaderHair from "@/app/hairStyle/header";
 import Link from "next/link";
 import About from "@/app/hairStyle/about";
-import {list} from "postcss";
-
-// export default function xx(req , res){
-//     const obj =  req.searchParams
-//     // console.log(req)
-//     let data = getDate(obj)
-//     console.log(data)
-//
-//     function getDate(obj){
-//         for(let profile in obj ){
-//             var jsObject =  JSON.parse(profile);
-//         }
-//         return jsObject
-//     }
-//     console.log('aaaaaa')
-// }
 
 export default function HairStyle(req , res){
-    const obj =  req.searchParams
-    // console.log(req)
-    let data = getDate(obj)
+    const object =  req.searchParams
+    let data = getDate(object)
 
-    function getDate(obj){
-        for(let profile in obj ){
-            var jsObject =  JSON.parse(profile);
+    function getDate(object){
+        for(let obj in object ){
+            var jsObject =  JSON.parse(obj);
         }
         return jsObject
     }
+
     const profile = {}
-    for (let cate of data.profile){
+    for (let obj of data.profile){
         profile.data = {
-            'address':cate.address,
-            'city':cate.city,
-            'phone':cate.phone,
-            'first_name':cate.first_name,
-            'last_name':cate.last_name,
+            'address':obj.address,
+            'city':obj.city,
+            'phone':obj.phone,
+            'first_name':obj.first_name,
+            'last_name':obj.last_name,
             'slug': data.slug,
         }
     }
@@ -52,6 +36,7 @@ export default function HairStyle(req , res){
         'score':data.score,
     }
     const title = data.title
+
     return (
         <html lang="en">
             <head>
@@ -77,13 +62,12 @@ export default function HairStyle(req , res){
 
 function Review(data){
     const w = data.data[1]
-    let f5 = w[0] + '%'
-    let f4 = w[1] + '%'
-    let f3 = w[2] + '%'
-    let f2 = w[3] + '%'
-    let f1 = w[4] + '%'
-    let count = data.data[0]
-    console.log(count[6])
+    let f5 = w[0] + '%' // 5-star percent
+    let f4 = w[1] + '%' // 4-star percent
+    let f3 = w[2] + '%' // 3-star percent
+    let f2 = w[3] + '%' // 2-star percent
+    let f1 = w[4] + '%' // 1-star percent
+    let count = data.data[0] // star count
     const comment = data.data[2]
     const commentaction = '../../commentposts/' + 4
     return (
@@ -157,7 +141,7 @@ function Review(data){
 
 function Comments(data) {
     const user = data.data
-    const replyurl = '../../reply/' + 4 + '/' + 1
+    const replyUrl = '../../reply/' + 4 + '/' + 1
     const reply = user[4]
     console.log('comments')
     console.log(user)
@@ -190,7 +174,7 @@ function Comments(data) {
                         <p className='text-sm mb-2'>{user[0]}</p>
                     </div>
                 </div>
-                <form method='POST' action={replyurl} id='5' className='w-full bottom-0 h-14 md:h-20 flex items-center px-3'>
+                <form method='POST' action={replyUrl} id='5' className='w-full bottom-0 h-14 md:h-20 flex items-center px-3'>
                     <input type="text" name='desc' className='w-44 md:text-sm md:w-4/5 h-7 md:h-10 rounded' placeholder='نظر خود را وارد کنید ...'/>
                     <input type="submit" value='ثبت پاسخ' className='w-32 h-7 md:h-10 ms-2 border border-gray-400 rounded'/>
                     {/*  send icon  */}
