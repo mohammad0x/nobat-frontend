@@ -48,7 +48,7 @@ export default function Search(req , res){
                <div className="w-full border-t pb-3 bt-3"></div>
                <section className='px-4 md:px-8 py-3'>
                     <h1 className='text-3xl font-bold'>تازه ها</h1>
-                    <Swiper className='mt-5 mb-12'>
+                    <Swiper className='mt-5 mb-20'>
                        {newService.map(item => {
                            return (
                                 <SwiperSlide className='w-20rem'>

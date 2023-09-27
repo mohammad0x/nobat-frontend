@@ -17,7 +17,7 @@ export default function Home(req, res) {
 
     function getDate(object) {
         for (let obj in object) {
-            var jsObject = JSON.parse(object);
+            var jsObject = JSON.parse(obj);
         }
         return jsObject
     }
@@ -50,8 +50,8 @@ export default function Home(req, res) {
                     <Swiper className='mt-5 lg:h-3/5 mb-5'>
                         {create.map(item => {
                             return (
-                                <SwiperSlide className='w-1-4 flex items-center justify-center'>
-                                    <HairStyle data={item}/>
+                                <SwiperSlide className='w-20rem'>
+                                     <HairStyle data={item}/>
                                 </SwiperSlide>
                             )
                         })}
@@ -65,7 +65,7 @@ export default function Home(req, res) {
                     <Swiper className='mt-5 lg:h-3/5 mb-5'>
                         {create.map(item => {
                             return (
-                                <SwiperSlide className='w-1-4 flex items-center justify-center'>
+                                <SwiperSlide className='w-20rem'>
                                     <HairStyle data={item}/>
                                 </SwiperSlide>
                             )
