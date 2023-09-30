@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 
@@ -14,7 +15,7 @@ export default function Number() {
             <body dir='rtl'>
                 <Back />
                 <section className='bg-gray-950 w-screen h-screen flex items-center justify-center'>
-                    <div className='w-72 md:w-7/12 w-98 bg-white py-6 rounded text-center'>
+                    <div className='w-72 md:w-1/3  bg-white py-6 rounded text-center'>
                         <h1 className='text-2xl md:text-3xl mb-10'>شماره همراه</h1>
                         <form method='POST' className='w-full h-full text-center flex flex-col items-center'>
                             <input type="number" name='phone' placeholder='شماره همراه' className='w-64 md:w-96 lg:w-96 h-10 md:h-12 mb-10 border-0 border-b border-b-gray-400 text-sm'/>

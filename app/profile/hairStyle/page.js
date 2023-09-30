@@ -36,7 +36,12 @@ export default function Profile(req, res) {
 }
 
 function ProfileTop(data) {
-    const image = 'http://127.0.0.1:3000' + data.data.photo
+    let image
+    if (data.data.photo !== null) {
+        image = 'http://127.0.0.1:3000/' + data.data.photo
+    } else {
+        image = 'http://127.0.0.1:3000/' + '2.jpg'
+    }
     return (
         <section className='bg-gray-950 flex flex-col items-center w-full '>
             <h1 className='text-white mt-3 text-2xl'>Profile</h1>

@@ -69,6 +69,6 @@ function Services(data) {
 
 function AddBtn() {
     return (
-        <a href='#' className='w-20 h-20 absolute bottom-2 right-7 bg-green-800 rounded-full'></a>
+        <a href='../service' className='w-20 h-20 absolute bottom-2 right-7 bg-green-800 rounded-full'></a>
     )
 }

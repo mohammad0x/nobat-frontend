@@ -52,7 +52,7 @@ export default function Post(req , res){
                 <HeaderHair data={create}/>
                 <Collapse data={data.id}/>
                 <Swiper pagination={{dynamicBullets: true,}} modules={[Pagination]} className="bg-gray-950 flex items-center justify-center mb-80">
-                    {y.post.map(item => {
+                    {data.post.map(item => {
                         return(
                             <SwiperSlide className='w-screen swiper-slide items-center justify-center py-6 px-10 flex'>
                                 <Posts data={item}/>

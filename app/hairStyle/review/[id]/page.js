@@ -3,6 +3,7 @@ import React from 'react'
 import HeaderHair from "@/app/hairStyle/header";
 import Link from "next/link";
 import About from "@/app/hairStyle/about";
+import "@/app/reserve/[id]/js";
 
 export default function HairStyle(req , res){
     const object =  req.searchParams

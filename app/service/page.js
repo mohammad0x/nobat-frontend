@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Back from "@/app/components/backBtn/page";
 
@@ -29,7 +30,7 @@ export default function NewService(req, res) {
             <body dir='rtl'>
                 <Back />
                 <section className='bg-gray-950 w-screen h-screen flex items-center justify-center'>
-                    <div className='w-72 md:w-1/2 w-98 bg-white pt-6 rounded text-center'>
+                    <div className='w-72 md:w-1/3 bg-white pt-6 rounded text-center'>
                         <h1 className='text-2xl md:text-3xl mb-4'>سرویس جدید</h1>
                         <form method='POST' className='w-full h-full text-center flex flex-col items-center'>
                             <select name="category" id="category" className='w-64 md:w-96 h-10 md:h-11 mb-2 border-0 border-b'>
@@ -48,9 +49,9 @@ export default function NewService(req, res) {
 
                             <div className='flex justify-around w-1/2 mt-3 mb-3'>
                                 <label htmlFor="True">فعال</label>
-                                <input type="radio" id="True" name="status" value="True" className='w-6 h-6 border-1'/>
+                                <input type="radio" id="True" name="active" value="True" className='w-6 h-6 border-1'/>
                                 <label htmlFor="False">غیرفعال</label>
-                                <input type="radio" id="status" name="status" value="False" className='w-6 h-6 border-1'/>
+                                <input type="radio" id="status" name="active    " value="False" className='w-6 h-6 border-1'/>
                             </div>
 
                             <input type="submit" className='w-32 h-12 md:w-44 lg:h-14 mb-3 rounded-full border border-gray-700 hover:border-0 hover:bg-gray-700 hover:text-white duration-300' value='افزودن'/>
