@@ -1,8 +1,6 @@
 import '../../globals.css'
 
 export default function Customer(data) {
-    console.log('data')
-    console.log(data)
     const reserve = data.data[0]
     const service = data.data[1]
     const profile = data.data[2]

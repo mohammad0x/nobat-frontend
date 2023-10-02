@@ -29,7 +29,6 @@ export default function Nobat(req, res) {
             }
         }
     }
-    // console.log(list)
 
     return (
         <html lang = "en">

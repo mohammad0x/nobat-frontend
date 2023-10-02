@@ -2,7 +2,6 @@ import '../../globals.css'
 import Link from "next/link";
 
 export default function Customer(data) {
-    console.log(data)
     const reserve = data.data[0]
     const service = data.data[1]
     const create = data.data[2]
