@@ -2,7 +2,6 @@
 import React from "react";
 import '../../globals.css'
 import Link from "next/link";
-import hairStyleCard from "@/app/components/hairStyle";
 
 export default function Profile(req, res) {
     const object =  req.searchParams

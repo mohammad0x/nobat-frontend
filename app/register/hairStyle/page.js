@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Link from "next/link";
 
 export default function register_Hairstyle() {
     return (
@@ -26,7 +26,7 @@ export default function register_Hairstyle() {
                 </div>
                 <div className="md:h-96 border-l p-5"></div>
                 <div className='w-full flex items-center justify-center flex-col md:ms-6'>
-                    <img src="/imageOrg.png" alt="" className='w-44 h-44 md:w-80 md:h-80'/>
+                    <img src="http://127.0.0.1:3000/imageOrg.png" alt="" className='w-44 h-44 md:w-80 md:h-80'/>
                 </div>
             </div>
         </section>
