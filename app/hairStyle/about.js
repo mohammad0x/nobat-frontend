@@ -1,5 +1,7 @@
 export default function About(data) {
     let profile = data.data
+    console.log('profile')
+    console.log(data)
     return (
         <section className='bg-gray-950'>
             <div className='Google-height relative bg-white flex items-center justify-center'>

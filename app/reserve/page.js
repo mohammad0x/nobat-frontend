@@ -22,7 +22,7 @@ export default function Reserve() {
                         <form method="POST" className='flex flex-col md:flex-row mt-8 w-full'>
                             {/*<input type="date" name='date' className='w-64 h-10 md:w-11/12 md:h-11 rounded mb-5 shadow focus:shadow-lg'/>*/}
                             <div className='flex md:w-1/2 items-center justify-center'>
-                                <DatePicker calendar={persian} locale={persian_fa} className='mb-5' value={Cdate}
+                                <Calendar calendar={persian} locale={persian_fa} className='mb-5' value={Cdate}
                                           onChange={(date) => {
                                               const d = new Date(date).toLocaleDateString('fa-IR');
                                               setDate(d);

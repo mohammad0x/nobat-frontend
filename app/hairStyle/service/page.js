@@ -22,17 +22,16 @@ export default function Service(req , res){
         return jsObject
     }
 
-    const profile = {}
-    for (let obj of data.profile){
-        profile.data = {
-            'address':obj.address,
-            'city':obj.city,
-            'phone':obj.phone,
-            'first_name':obj.first_name,
-            'last_name':obj.last_name,
-            'slug': data.slug
-        }
+    const profile = {
+        'address':data.address,
+        'city':data.city,
+        'phone':data.phone,
+        'first_name':data.first_name,
+        'last_name':data.last_name,
+        'slug': data.slug
+
     }
+
     const create = {
         'title': data.title,
         'slug': data.slug,
@@ -61,7 +60,7 @@ export default function Service(req , res){
                         )
                     })}
                 </Swiper>
-                <About data={profile.data}/>
+                <About data={profile}/>
             </body>
         </html>
     )

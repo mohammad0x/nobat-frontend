@@ -2,7 +2,6 @@
 import React from "react";
 import '../../globals.css'
 import Link from "next/link";
-import hairStyleCard from "@/app/components/hairStyle";
 
 export default function Profile(req, res) {
     const object =  req.searchParams
@@ -71,8 +70,8 @@ function ProfileBottom(data) {
                 </div>
                 <HairStyleCard data={data.data}/>
                 <CustomerCard />
-                <div className='w-full h-11 text-right border-t-4 border-gray-400 px-3'>
-                    <h3 className='text-lg text-red-500 border-gray-200 py-2'>خروج</h3>
+                <div className='w-full h-11 flex items-center text-right border-t-4 border-gray-400 px-3'>
+                    <Link href='../logout' className='w-full h-full text-lg text-red-500 border-gray-200 py-2'>خروج</Link>
                 </div>
             </div>
         </section>
@@ -129,16 +128,16 @@ function ProfileFooter() {
     return (
         <section className='absolute bottom-0 z-50 w-full h-18 bg-gray-950 text-xl text-center flex justify-center items-center text-gray-300'>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-600 duration-100'>
-                <a href="/" id='home'>خانه</a>
+                <Link href="/" id='home'>خانه</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-600 duration-100'>
-                <a href="/nobat" id='nobat'>نوبت ها</a>
+                <Link href="/nobat" id='nobat'>نوبت ها</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-600 duration-100'>
-                <a href="/search" id='search'>جستجو</a>
+                <Link href="/search" id='search'>جستجو</Link>
             </li>
             <li className='flex-col list-none w-1/4 h-full flex justify-center items-center hover:text-gray-600 duration-100'>
-                <a href="/profile" id='profile'>پروفایل</a>
+                <Link href="/profile" id='profile'>پروفایل</Link>
             </li>
         </section>
     )

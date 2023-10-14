@@ -47,7 +47,7 @@ export default function Home(req, res) {
                     <div className='relative'>
                         <h1 className='text-3xl font-bold'>پیشنهاد برای شما</h1>
                     </div>
-                    <Swiper className='mt-5 lg:h-3/5 mb-5'>
+                    <Swiper className='mt-5 mb-5'>
                         {create.map(item => {
                             return (
                                 <SwiperSlide className='w-20rem'>
@@ -62,7 +62,7 @@ export default function Home(req, res) {
                     <div className='relative'>
                         <h1 className='text-3xl font-bold'>سرویس دهنده ها</h1>
                     </div>
-                    <Swiper className='mt-5 lg:h-3/5 mb-5'>
+                    <Swiper className='mt-5 mb-5'>
                         {create.map(item => {
                             return (
                                 <SwiperSlide className='w-20rem'>
